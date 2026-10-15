@@ -13,7 +13,7 @@
   --paper:#f7f3ea; --card:#fffdf6; --ink:#221d16; --ink-soft:#4c463b;
   --muted:#9a917e; --line:#e2d8bf; --hairline:#ece3cd;
   --accent:#b23a2a; --accent-deep:#8e2b1f; --accent-soft:#f7e8e0;
-  --serif:Georgia,"Songti SC","STSong","SimSun",serif;
+  --serif:"Times New Roman",Georgia,"Songti SC","STSong","SimSun",serif;
   --sans:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
 }
 *{box-sizing:border-box; -webkit-tap-highlight-color:transparent;}
@@ -52,11 +52,12 @@ body{
 .sec-btn.active .txt{font-weight:600;}
 .side-foot{padding:14px 20px; font-size:11px; color:var(--muted); border-top:1px solid var(--hairline); white-space:nowrap; letter-spacing:.08em;}
 #collapseBtn{
-  position:absolute; top:16px; right:-15px; width:30px; height:30px; border-radius:50%;
+  position:absolute; top:16px; right:14px; width:32px; height:32px; border-radius:50%;
   background:var(--card); border:1px solid var(--line); cursor:pointer; z-index:41;
-  display:flex; align-items:center; justify-content:center; font-size:14px; color:var(--muted);
-  box-shadow:0 1px 4px rgba(120,100,70,.12);
+  display:flex; align-items:center; justify-content:center; font-size:15px; color:var(--ink-soft);
+  box-shadow:0 1px 5px rgba(120,100,70,.14); transition:transform .2s ease;
 }
+#collapseBtn:hover{color:var(--accent); border-color:var(--accent);}
 body.side-collapsed #sidebar{width:70px;}
 body.side-collapsed #sidebar .txt, body.side-collapsed #sidebar .side-head,
 body.side-collapsed #sidebar .side-foot, body.side-collapsed #sidebar .brand{display:none;}
@@ -98,6 +99,8 @@ body.side-collapsed main{margin-left:70px;}
 .dateline .arrow:disabled{opacity:.25; cursor:default;}
 .dateline .d{font-family:var(--serif); font-size:19px; letter-spacing:.06em;}
 .dateline .issue{font-size:12px; color:var(--muted); letter-spacing:.1em;}
+/* Times New Roman 数字与中文基线对齐微调 */
+.tnum{font-family:"Times New Roman",Georgia,serif; position:relative; top:.06em;}
 .lede{margin-top:16px; padding-left:16px; border-left:3px solid var(--accent);}
 .lede .k{font-size:11px; color:var(--accent); letter-spacing:.3em; margin-bottom:8px; font-weight:600;}
 .lede p{margin:0; font-family:var(--serif); font-size:18px; line-height:1.9; color:var(--ink-soft);}
@@ -205,7 +208,6 @@ footer .rule{width:56px; height:2px; background:var(--accent); margin:0 auto 14p
       <h1 class="mast-title" id="mastTitle">—</h1>
       <div class="dateline">
         <button class="arrow" id="prevDay" aria-label="前一天">‹</button>
-        <span class="d" id="dateTitle">—</span>
         <button class="arrow" id="nextDay" aria-label="后一天">›</button>
         <span class="issue" id="issueNo"></span>
       </div>
@@ -230,6 +232,13 @@ function fmtDate(ds){
   const [y,m,d] = ds.split('-').map(Number);
   const dt = new Date(y, m-1, d);
   return `${m}月${d}日 ${WEEK[dt.getDay()]}`;
+}
+/* 日期里的阿拉伯数字用 Times New Roman 并做基线对齐 */
+function fmtDateHTML(ds){
+  const [y,m,d] = ds.split('-').map(Number);
+  const dt = new Date(y, m-1, d);
+  const t = n => `<span class="tnum">${n}</span>`;
+  return `${t(m)}月${t(d)}日 ${WEEK[dt.getDay()]}`;
 }
 function ytId(url){
   const m = String(url).match(/(?:youtube\.com\/(?:watch\?v=|shorts\/)|youtu\.be\/)([\w-]{6,})/);
@@ -269,9 +278,9 @@ function render(){
   }));
   // masthead date
   const idx = dates.indexOf(curDate);
-  document.getElementById('mastTitle').textContent = fmtDate(curDate);
-  document.getElementById('dateTitle').textContent = fmtDate(curDate);
-  document.getElementById('issueNo').textContent = `第 ${dates.length-idx} 期${idx===0?' · 最新':''}`;
+  const issueNum = dates.length-idx;
+  document.getElementById('mastTitle').innerHTML = fmtDateHTML(curDate);
+  document.getElementById('issueNo').innerHTML = `第 <span class="tnum">${issueNum}</span> 期${idx===0?' · 最新':''}`;
   document.getElementById('prevDay').disabled = idx >= dates.length-1;
   document.getElementById('nextDay').disabled = idx <= 0;
   const sel = document.getElementById('dateSelect');
@@ -302,7 +311,7 @@ function render(){
     ).join('') + `</ul>`;
   }
   document.getElementById('card').innerHTML =
-    `<div class="card-head"><h2>${esc(secMeta.title)}</h2><span class="meta">${fmtDate(curDate)} · 共 <b>${sec.items.length}</b> 条</span></div>` +
+    `<div class="card-head"><h2>${esc(secMeta.title)}</h2><span class="meta">${fmtDate(curDate)} · 共 <b class="tnum">${sec.items.length}</b> 条</span></div>` +
     itemsHTML + tail;
   // click-to-play
   document.querySelectorAll('.video .thumb').forEach(t=>t.addEventListener('click',()=>{
