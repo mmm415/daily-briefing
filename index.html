@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>每日简报</title>
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="theme-color" content="#f6f2e9">
+<style>
+:root{
+  --paper:#f6f2e9; --card:#fffdf7; --ink:#2b2b2b; --muted:#8a8378;
+  --line:#e5ddc9; --accent:#a93226; --accent-soft:#f3e2dc;
+}
+*{box-sizing:border-box; -webkit-tap-highlight-color:transparent;}
+html,body{margin:0; padding:0;}
+body{
+  background:var(--paper); color:var(--ink);
+  font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  line-height:1.75; font-size:16px;
+}
+/* ---------- sidebar ---------- */
+#sidebar{
+  position:fixed; left:0; top:0; bottom:0; width:238px; z-index:40;
+  background:var(--card); border-right:1px solid var(--line);
+  display:flex; flex-direction:column; transition:width .22s ease, transform .25s ease;
+  overflow:hidden;
+}
+#sidebar .side-head{padding:18px 16px 8px; font-size:12px; color:var(--muted); letter-spacing:.2em; white-space:nowrap;}
+#sidebar nav{flex:1; overflow-y:auto; padding:4px 10px;}
+.sec-btn{
+  display:flex; align-items:center; gap:12px; width:100%;
+  border:1px solid transparent; background:transparent; cursor:pointer;
+  padding:12px 10px; border-radius:12px; text-align:left; color:var(--ink);
+  font-size:15px; font-family:inherit; white-space:nowrap;
+}
+.sec-btn .num{font-size:11px; color:var(--muted); width:20px; font-family:Georgia,serif;}
+.sec-btn .ico{font-size:20px; width:26px; text-align:center;}
+.sec-btn .txt{flex:1; overflow:hidden;}
+.sec-btn .txt small{display:block; font-size:11px; color:var(--muted);}
+.sec-btn.active{background:var(--accent-soft); border-color:#e3c4b8;}
+.sec-btn.active .num{color:var(--accent);}
+.side-foot{padding:12px 16px; font-size:11px; color:var(--muted); border-top:1px solid var(--line); white-space:nowrap;}
+#collapseBtn{
+  position:absolute; top:14px; right:-15px; width:30px; height:30px; border-radius:50%;
+  background:var(--card); border:1px solid var(--line); cursor:pointer; z-index:41;
+  display:flex; align-items:center; justify-content:center; font-size:14px; color:var(--muted);
+}
+body.side-collapsed #sidebar{width:64px;}
+body.side-collapsed #sidebar .txt, body.side-collapsed #sidebar .side-head, body.side-collapsed #sidebar .side-foot{display:none;}
+body.side-collapsed #collapseBtn{transform:rotate(180deg);}
+#scrim{position:fixed; inset:0; background:rgba(0,0,0,.25); z-index:35; display:none;}
+/* ---------- main ---------- */
+main{margin-left:238px; transition:margin .22s ease; min-height:100vh;}
+body.side-collapsed main{margin-left:64px;}
+#topbar{
+  position:sticky; top:0; z-index:30; background:rgba(246,242,233,.94);
+  backdrop-filter:blur(8px); border-bottom:1px solid var(--line);
+  padding:14px 20px; display:flex; align-items:center; gap:12px;
+}
+#menuBtn{display:none; border:1px solid var(--line); background:var(--card); border-radius:10px; width:38px; height:38px; font-size:18px; cursor:pointer;}
+.date-nav{display:flex; align-items:center; gap:10px; flex:1; justify-content:center;}
+.date-nav .arrow{
+  width:34px; height:34px; border-radius:50%; border:1px solid var(--line);
+  background:var(--card); cursor:pointer; font-size:16px; color:var(--muted);
+  display:flex; align-items:center; justify-content:center;
+}
+.date-nav .arrow:disabled{opacity:.3; cursor:default;}
+.date-title{text-align:center;}
+.date-title h1{margin:0; font-size:21px; font-family:Georgia,"Songti SC","STSong",serif; letter-spacing:.05em;}
+.date-title .issue{font-size:11px; color:var(--muted);}
+#dateSelect{
+  border:1px solid var(--line); background:var(--card); border-radius:10px;
+  padding:8px 10px; font-size:13px; font-family:inherit; color:var(--ink); max-width:190px;
+}
+.wrap{max-width:760px; margin:0 auto; padding:22px 20px 80px;}
+#overview{margin:6px 0 22px;}
+#overview .k{font-size:12px; color:var(--accent); letter-spacing:.25em; margin-bottom:6px;}
+#overview p{margin:0; font-size:17px; font-family:Georgia,"Songti SC","STSong",serif;}
+.card{
+  background:var(--card); border:1px solid var(--line); border-radius:16px;
+  padding:26px 24px; box-shadow:0 2px 14px rgba(120,100,70,.07);
+}
+.card-head{display:flex; align-items:baseline; justify-content:space-between; border-bottom:2px solid var(--ink); padding-bottom:10px; margin-bottom:6px;}
+.card-head h2{margin:0; font-size:22px; font-family:Georgia,"Songti SC","STSong",serif;}
+.card-head .d{font-size:12px; color:var(--muted);}
+.item{padding:18px 0; border-bottom:1px dashed var(--line);}
+.item:last-child{border-bottom:none;}
+.item h3{margin:0 0 8px; font-size:17px; line-height:1.6;}
+.item p{margin:0 0 10px; font-size:15px; color:#3d3a34;}
+.item img{width:100%; border-radius:12px; margin:6px 0 10px; display:block; background:#eee;}
+.links{margin:8px 0 0; padding:0; list-style:none;}
+.links li{margin:6px 0;}
+.links a{color:var(--accent); text-decoration:none; font-size:14px; border-bottom:1px dotted var(--accent);}
+.video{margin:10px 0 4px; border:1px solid var(--line); border-radius:12px; overflow:hidden; background:#111;}
+.video .thumb{position:relative; cursor:pointer; aspect-ratio:16/9; background:#1c1c1c center/cover;}
+.video .thumb .play{
+  position:absolute; inset:0; margin:auto; width:58px; height:58px; border-radius:50%;
+  background:rgba(169,50,38,.92); display:flex; align-items:center; justify-content:center;
+  color:#fff; font-size:22px;
+}
+.video .vtitle{padding:10px 14px; font-size:13px; color:#eee; background:#1c1c1c;}
+.video iframe{width:100%; aspect-ratio:16/9; border:0; display:block;}
+.linkcard{
+  display:flex; align-items:center; gap:10px; border:1px solid var(--line); border-radius:12px;
+  padding:10px 14px; margin:8px 0; text-decoration:none; color:var(--ink); background:#fbf8ef; font-size:14px;
+}
+.linkcard .tag{font-size:11px; background:var(--accent); color:#fff; border-radius:6px; padding:2px 8px; white-space:nowrap;}
+.empty{padding:60px 20px; text-align:center; color:var(--muted);}
+footer{max-width:760px; margin:0 auto; padding:0 20px 40px; font-size:12px; color:var(--muted); text-align:center;}
+@media (max-width:820px){
+  #sidebar{transform:translateX(-100%); width:250px;}
+  body.side-collapsed #sidebar{width:250px;}
+  body.side-open #sidebar{transform:translateX(0);}
+  body.side-open #scrim{display:block;}
+  body.side-collapsed main, main{margin-left:0;}
+  #menuBtn{display:flex; align-items:center; justify-content:center;}
+  #collapseBtn{display:none;}
+  #dateSelect{display:none;}
+  .wrap{padding:16px 14px 70px;}
+  .card{padding:20px 16px;}
+}
+</style>
+</head>
+<body>
+<aside id="sidebar">
+  <div class="side-head">板块</div>
+  <nav id="secNav"></nav>
+  <div class="side-foot">每天早 8 点更新</div>
+  <button id="collapseBtn" title="收起/展开">‹</button>
+</aside>
+<div id="scrim"></div>
+<main>
+  <div id="topbar">
+    <button id="menuBtn">☰</button>
+    <div class="date-nav">
+      <button class="arrow" id="prevDay">‹</button>
+      <div class="date-title"><h1 id="dateTitle">—</h1><div class="issue" id="issueNo"></div></div>
+      <button class="arrow" id="nextDay">›</button>
+    </div>
+    <select id="dateSelect"></select>
+  </div>
+  <div class="wrap">
+    <section id="overview"></section>
+    <article class="card" id="card"></article>
+  </div>
+  <footer>每日简报 · 仅供个人阅读</footer>
+</main>
+<script>
+const SECTIONS = [
+  {key:'ai',      num:'01', icon:'🤖', title:'AI / 科技'},
+  {key:'finance', num:'02', icon:'📈', title:'财经 / 赚钱机会'},
+  {key:'hot',     num:'03', icon:'🌐', title:'时事热点'},
+  {key:'life',    num:'04', icon:'☕', title:'生活情报'},
+];
+const WEEK = ['周日','周一','周二','周三','周四','周五','周六'];
+let DB = null, dates = [], curDate = null, curSec = 'ai';
+
+function esc(s){ return String(s||'').replace(/[&<>"]/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
+function fmtDate(ds){
+  const [y,m,d] = ds.split('-').map(Number);
+  const dt = new Date(y, m-1, d);
+  return `${m}月${d}日 ${WEEK[dt.getDay()]}`;
+}
+function ytId(url){
+  const m = String(url).match(/(?:youtube\.com\/(?:watch\?v=|shorts\/)|youtu\.be\/)([\w-]{6,})/);
+  return m ? m[1] : null;
+}
+function bvId(url){
+  const m = String(url).match(/bilibili\.com\/video\/(BV\w+)/);
+  return m ? m[1] : null;
+}
+function videoHTML(v){
+  const y = ytId(v.url), b = bvId(v.url);
+  if(y || b){
+    const embed = y ? `https://www.youtube.com/embed/${y}?rel=0`
+                    : `https://player.bilibili.com/player.html?bvid=${b}&page=1&high_quality=1&danmaku=0`;
+    const srcName = y ? 'YouTube' : 'B站';
+    const vid = 'v' + Math.random().toString(36).slice(2);
+    return `<div class="video"><div class="thumb" id="${vid}" data-embed="${embed}">
+      <div class="play">▶</div></div>
+      <div class="vtitle">${esc(v.title)} · 点按播放（${srcName}）</div></div>`;
+  }
+  return `<a class="linkcard" href="${esc(v.url)}" target="_blank" rel="noopener">
+    <span class="tag">视频</span><span>${esc(v.title)}</span></a>`;
+}
+
+function render(){
+  const b = DB.briefings[curDate];
+  // sidebar
+  document.getElementById('secNav').innerHTML = SECTIONS.map(s=>{
+    const n = b ? (b.sections.find(x=>x.key===s.key)?.items.length || 0) : 0;
+    return `<button class="sec-btn${s.key===curSec?' active':''}" data-sec="${s.key}">
+      <span class="num">${s.num}</span><span class="ico">${s.icon}</span>
+      <span class="txt">${esc(s.title)}<small>${n} 条</small></span></button>`;
+  }).join('');
+  document.querySelectorAll('.sec-btn').forEach(btn=>btn.addEventListener('click',()=>{
+    curSec = btn.dataset.sec; render(); closeDrawer();
+  }));
+  // date bar
+  const idx = dates.indexOf(curDate);
+  document.getElementById('dateTitle').textContent = fmtDate(curDate);
+  document.getElementById('issueNo').textContent = `第 ${dates.length-idx} 期${idx===0?' · 最新一期':''}`;
+  document.getElementById('prevDay').disabled = idx >= dates.length-1;
+  document.getElementById('nextDay').disabled = idx <= 0;
+  const sel = document.getElementById('dateSelect');
+  sel.innerHTML = dates.map(d=>`<option value="${d}"${d===curDate?' selected':''}>${fmtDate(d)}（${d}）</option>`).join('');
+  // overview + card
+  const secMeta = SECTIONS.find(s=>s.key===curSec);
+  const sec = b.sections.find(x=>x.key===curSec);
+  document.getElementById('overview').innerHTML =
+    `<div class="k">今日总览</div><p>${esc(b.overview)}</p>`;
+  document.getElementById('card').innerHTML =
+    `<div class="card-head"><h2>${esc(secMeta.title)}</h2><span class="d">${fmtDate(curDate)}</span></div>` +
+    sec.items.map(it=>{
+      let h = `<div class="item"><h3>${esc(it.heading)}</h3><p>${esc(it.body)}</p>`;
+      if(it.imageUrl) h += `<img src="${esc(it.imageUrl)}" loading="lazy" alt="">`;
+      (it.videos||[]).forEach(v=>{ h += videoHTML(v); });
+      (it.links||[]).forEach(l=>{
+        h += `<a class="linkcard" href="${esc(l.url)}" target="_blank" rel="noopener">
+          <span class="tag">帖子</span><span>${esc(l.label)}</span></a>`;
+      });
+      return h + `</div>`;
+    }).join('');
+  // click-to-play
+  document.querySelectorAll('.video .thumb').forEach(t=>t.addEventListener('click',()=>{
+    const f = document.createElement('iframe');
+    f.src = t.dataset.embed; f.allowFullscreen = true;
+    f.setAttribute('allow','accelerometer; autoplay; encrypted-media; picture-in-picture');
+    t.replaceWith(f);
+  },{once:true}));
+  window.scrollTo({top:0});
+}
+
+function closeDrawer(){ document.body.classList.remove('side-open'); }
+
+async function init(){
+  try{
+    const r = await fetch('data/briefings.json', {cache:'no-store'});
+    DB = await r.json();
+  }catch(e){
+    document.getElementById('card').innerHTML = '<div class="empty">简报数据加载失败，请稍后刷新重试。</div>';
+    return;
+  }
+  dates = Object.keys(DB.briefings).sort().reverse();
+  if(!dates.length){
+    document.getElementById('card').innerHTML = '<div class="empty">暂无简报，敬请期待。</div>';
+    return;
+  }
+  curDate = dates[0];
+  // sidebar collapse (desktop), persisted
+  if(localStorage.getItem('briefingSide')==='collapsed') document.body.classList.add('side-collapsed');
+  document.getElementById('collapseBtn').addEventListener('click',()=>{
+    const c = document.body.classList.toggle('side-collapsed');
+    localStorage.setItem('briefingSide', c?'collapsed':'open');
+  });
+  document.getElementById('menuBtn').addEventListener('click',()=>{
+    document.body.classList.add('side-open');
+  });
+  document.getElementById('scrim').addEventListener('click', closeDrawer);
+  document.getElementById('prevDay').addEventListener('click',()=>{
+    const i = dates.indexOf(curDate);
+    if(i < dates.length-1){ curDate = dates[i+1]; render(); }
+  });
+  document.getElementById('nextDay').addEventListener('click',()=>{
+    const i = dates.indexOf(curDate);
+    if(i > 0){ curDate = dates[i-1]; render(); }
+  });
+  document.getElementById('dateSelect').addEventListener('change',e=>{
+    curDate = e.target.value; render();
+  });
+  render();
+}
+init();
+</script>
+</body>
+</html>
