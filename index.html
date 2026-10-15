@@ -200,6 +200,11 @@ footer .rule{width:56px; height:2px; background:var(--accent); margin:0 auto 14p
   <div class="brand">每日简报<small>DAILY BRIEFING</small></div>
   <div class="side-head">板块</div>
   <nav id="secNav"></nav>
+  <div class="side-head">复盘</div>
+  <button class="sec-btn" id="weeklyBtn">
+    <span class="num">WK</span><span class="ico">🧠</span>
+    <span class="txt">每周复盘<small id="weeklyCount"></small></span>
+  </button>
   <div class="side-foot">每天早 8 点更新</div>
   <button id="collapseBtn" title="收起/展开">‹</button>
 </aside>
@@ -232,9 +237,11 @@ const SECTIONS = [
   {key:'hot',     num:'03', icon:'🌐', title:'时事热点'},
   {key:'life',    num:'04', icon:'☕', title:'生活情报'},
   {key:'xianyu',  num:'05', icon:'🐟', title:'闲鱼风向标'},
+  {key:'figures', num:'06', icon:'🎙️', title:'名人事件'},
 ];
 const WEEK = ['周日','周一','周二','周三','周四','周五','周六'];
 let DB = null, dates = [], curDate = null, curSec = 'ai';
+let WK = null, weeks = [], curWeek = 0, view = 'section';
 
 function esc(s){ return String(s||'').replace(/[&<>"]/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
 function fmtDate(ds){
@@ -273,7 +280,35 @@ function videoHTML(v){
     <span class="tag video-tag">视频</span><span>${esc(v.title)}</span><span class="go">→</span></a>`;
 }
 
+function renderWeekly(){
+  const w = weeks[curWeek];
+  document.querySelectorAll('#secNav .sec-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById('weeklyBtn').classList.add('active');
+  document.getElementById('mastTitle').textContent = '每周认知复盘';
+  document.getElementById('issueNo').textContent = w ? `${w.range} · 共 ${weeks.length} 期` : '暂无';
+  document.getElementById('prevDay').disabled = curWeek >= weeks.length-1;
+  document.getElementById('nextDay').disabled = curWeek <= 0;
+  document.getElementById('overview').innerHTML = w
+    ? `<div class="k">本周一句话</div><p>${esc(w.intro)}</p>` : '';
+  let html = `<div class="card-head"><h2>本周认知点</h2><span class="meta">${w?esc(w.range):''}</span></div>`;
+  if(w){
+    html += w.points.map((p,j)=>
+      `<div class="item"><div class="idx">${String(j+1).padStart(2,'0')}</div><div><h3>${esc(p.heading)}</h3><p>${esc(p.body)}</p></div></div>`
+    ).join('');
+    if(w.checks && w.checks.length){
+      html += `<div class="videos-label">上周判断验证</div>` + w.checks.map(c=>
+        `<div class="item"><div class="idx">✓</div><div><h3>${esc(c.heading)}</h3><p>${esc(c.body)}</p></div></div>`
+      ).join('');
+    }
+  }else{
+    html += `<div class="empty">第一期复盘将于本周日晚上线，敬请期待。</div>`;
+  }
+  document.getElementById('card').innerHTML = html;
+  window.scrollTo({top:0});
+}
+
 function render(){
+  if(view==='weekly') return renderWeekly();
   const b = DB.briefings[curDate];
   // sidebar
   document.getElementById('secNav').innerHTML = SECTIONS.map(s=>{
@@ -282,9 +317,11 @@ function render(){
       <span class="num">${s.num}</span><span class="ico">${s.icon}</span>
       <span class="txt">${esc(s.title)}<small>${n} 条</small></span></button>`;
   }).join('');
-  document.querySelectorAll('.sec-btn').forEach(btn=>btn.addEventListener('click',()=>{
-    curSec = btn.dataset.sec; render(); closeDrawer();
+  document.querySelectorAll('#secNav .sec-btn').forEach(btn=>btn.addEventListener('click',()=>{
+    view = 'section'; curSec = btn.dataset.sec; render(); closeDrawer();
   }));
+  document.getElementById('weeklyBtn').classList.toggle('active', view==='weekly');
+  document.getElementById('weeklyCount').textContent = weeks.length ? `${weeks.length} 期` : '';
   // masthead date
   const idx = dates.indexOf(curDate);
   const issueNum = dates.length-idx;
@@ -349,6 +386,14 @@ async function init(){
     return;
   }
   curDate = dates[0];
+  try{
+    const r2 = await fetch('data/weekly.json',{cache:'no-store'});
+    if(r2.ok) WK = await r2.json();
+  }catch(e){}
+  weeks = (WK && WK.reviews) ? WK.reviews : [];
+  document.getElementById('weeklyBtn').addEventListener('click',()=>{
+    view = 'weekly'; render(); closeDrawer();
+  });
   if(localStorage.getItem('briefingSide')==='collapsed') document.body.classList.add('side-collapsed');
   document.getElementById('collapseBtn').addEventListener('click',()=>{
     const c = document.body.classList.toggle('side-collapsed');
@@ -359,15 +404,17 @@ async function init(){
   });
   document.getElementById('scrim').addEventListener('click', closeDrawer);
   document.getElementById('prevDay').addEventListener('click',()=>{
+    if(view==='weekly'){ if(curWeek < weeks.length-1){ curWeek++; render(); } return; }
     const i = dates.indexOf(curDate);
     if(i < dates.length-1){ curDate = dates[i+1]; render(); }
   });
   document.getElementById('nextDay').addEventListener('click',()=>{
+    if(view==='weekly'){ if(curWeek > 0){ curWeek--; render(); } return; }
     const i = dates.indexOf(curDate);
     if(i > 0){ curDate = dates[i-1]; render(); }
   });
   document.getElementById('dateSelect').addEventListener('change',e=>{
-    curDate = e.target.value; render();
+    view = 'section'; curDate = e.target.value; render();
   });
   render();
 }
