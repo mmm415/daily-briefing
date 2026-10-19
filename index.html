@@ -336,30 +336,24 @@ function render(){
   const sec = b.sections.find(x=>x.key===curSec);
   document.getElementById('overview').innerHTML =
     `<div class="k">今日判断</div><p>${esc(b.overview)}</p>`;
-  const vids = [], links = [];
   const itemsHTML = sec.items.map((it,i)=>{
     let h = `<div class="item"><div class="idx">${String(i+1).padStart(2,'0')}</div><div>`;
     h += `<h3>${esc(it.heading)}</h3><p>${esc(it.body)}</p>`;
     if(it.insight) h += `<div class="insight"><span class="ik">多想一层</span>${esc(it.insight)}</div>`;
     if(it.imageUrl) h += `<img src="${esc(it.imageUrl)}" loading="lazy" alt="">`;
+    (it.videos||[]).forEach(v=>{ h += videoHTML(v); });
+    if(it.links && it.links.length){
+      h += `<ul class="links">` + it.links.map(l=>
+        `<li><a class="linkcard" href="${esc(l.url)}" target="_blank" rel="noopener">
+          <span class="tag">帖子</span><span>${esc(l.label)}</span><span class="go">→</span></a></li>`
+      ).join('') + `</ul>`;
+    }
     h += `</div></div>`;
-    (it.videos||[]).forEach(v=>vids.push(v));
-    (it.links||[]).forEach(l=>links.push(l));
     return h;
   }).join('');
-  let tail = '';
-  if(vids.length){
-    tail += `<div class="videos-label">相关视频</div>` + vids.map(videoHTML).join('');
-  }
-  if(links.length){
-    tail += `<div class="videos-label">延伸阅读</div><ul class="links">` + links.map(l=>
-      `<li><a class="linkcard" href="${esc(l.url)}" target="_blank" rel="noopener">
-        <span class="tag">帖子</span><span>${esc(l.label)}</span><span class="go">→</span></a></li>`
-    ).join('') + `</ul>`;
-  }
   document.getElementById('card').innerHTML =
     `<div class="card-head"><h2>${esc(secMeta.title)}</h2><span class="meta">${fmtDate(curDate)} · 共 <b class="tnum">${sec.items.length}</b> 条</span></div>` +
-    itemsHTML + tail;
+    itemsHTML;
   // click-to-play
   document.querySelectorAll('.video .thumb').forEach(t=>t.addEventListener('click',()=>{
     const f = document.createElement('iframe');
