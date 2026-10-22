@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://mmm415.github.io/daily-briefing/sitemap.xml
