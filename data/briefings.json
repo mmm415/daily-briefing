@@ -3690,6 +3690,462 @@
           ]
         }
       ]
+    },
+    "2026-10-23": {
+      "overview": "市场开始怀疑AI烧钱能烧多久：纳斯达克创6月以来最差单日，Anthropic带着上半年800亿净亏损传出今日提交IPO申请——AI竞赛从拼模型，变成了拼谁的钱袋子更深。",
+      "sections": [
+        {
+          "key": "ai",
+          "title": "AI / 科技",
+          "items": [
+            {
+              "heading": "Anthropic传今日公开提交IPO申请，11月挂牌",
+              "body": "多家媒体援引知情人士称，Anthropic最快本周五（10月23日）公开提交S-1招股书，为11月上市清除关键程序障碍。投资者考虑按1.5万亿美元估值定价（较早先2万亿预期下调25%），募资规模最高1000亿美元；场外合约估值现报1.957万亿美元。",
+              "insight": null,
+              "imageUrl": null,
+              "links": [
+                {
+                  "label": "BlockBeats：Anthropic计划最快本周五公开提交IPO文件",
+                  "url": "https://www.theblockbeats.info/flash/373101"
+                },
+                {
+                  "label": "联合报：Anthropic最快11月挂牌，估值上看2兆美元",
+                  "url": "https://udn.com/news/story/6811/9789837?from=udn-referralnews_ch2artbottom"
+                }
+              ],
+              "videos": [
+                {
+                  "title": "估值被砍5000亿，反手\"白送\"750亿？深度拆解Anthropic上市前的资本棋局（明月三千里）",
+                  "url": "https://www.youtube.com/watch?v=8VE--ZGFuuA"
+                },
+                {
+                  "title": "Anthropic IPO上市前夜，真正暴富的可能不是它！AMZN/GOOG/AVGO瓜分AI史上最大订单",
+                  "url": "https://www.youtube.com/watch?v=HndKpLYhy-k"
+                },
+                {
+                  "title": "Anthropic's $1.5 Trillion IPO: What Are the Numbers Hiding?（英文）",
+                  "url": "https://www.youtube.com/watch?v=vLnvCDyuh78"
+                }
+              ]
+            },
+            {
+              "heading": "招股书拆解：807亿亏损是假的，4500亿账单是真的",
+              "body": "草案显示上半年营收163亿美元、净亏损807亿美元，但其中720亿是可转债公允价值变动的会计费用，并非真实现金流出。真正的数字藏在\"合同义务\"里：未来7到10年约4500亿美元云计算合同义务（谷歌云1110亿、AWS 1100亿），绝大多数\"无论是否使用均须支付\"且不可撤销；二季度公司首次实现调整后营业利润转正，三季度营收168亿环比增近50%。",
+              "insight": "这份文件第一次把AI行业最不愿示人的半张脸摊开：这不是软件公司的报表，是重工业公司的报表——4500亿不可撤销的算力长约，意味着AI竞争的本质是资本开支竞赛，谁的钱袋子深、融资能力强，谁才能留在牌桌上。",
+              "imageUrl": null,
+              "links": [
+                {
+                  "label": "新浪财经：史上最大IPO要来了：807亿亏损是假的，4500亿账单是真的",
+                  "url": "https://finance.sina.com.cn/wm/2026-10-22/doc-iniwavxm5886750.shtml"
+                }
+              ],
+              "videos": []
+            },
+            {
+              "heading": "英伟达柏林GTC发布七大开放权重模型家族",
+              "body": "10月21日英伟达在柏林GTC发布覆盖语言、检索、表格数据、机器人、自动驾驶、蛋白质设计、量子计算的七大家族开权重模型：80亿参数检索模型在ViDoRe V3.1密集模型中排名第一，740亿参数MoE模型Nemotron 3.5 Bolt最低只需24GB显存，10月23日开放下载；与多数只放权重的厂商不同，英伟达一并公开训练资料与方法。",
+              "insight": "欧洲企业越来越看重数据主权，可下载、可自托管的开权重模型正中下怀；但用得越深，CUDA、GPU与NIM微服务绑得越死——开放的是模型，锁住的是整条技术栈。",
+              "imageUrl": "https://www.nvidia.com/content/nvidiaGDC/us/en_US/home/_jcr_content/root/responsivegrid/nv_carousel_10568374_1427616877/item_1675738746388.coreimg.jpeg/1785940861879/gtc26-berlin-web-get-notified-sfg-1920x1080.jpeg",
+              "links": [
+                {
+                  "label": "TechNews：輝達柏林GTC發表七大開放權重模型家族",
+                  "url": "https://technews.tw/2026/10/22/nvidia-woos-wary-europeans-with-more-open-weights-models/"
+                }
+              ],
+              "videos": []
+            },
+            {
+              "heading": "OpenAI把聊天锁定功能下放到免费版",
+              "body": "OpenAI开始向免费用户开放敏感ChatGPT对话锁定功能，可用4位PIN码或面容/指纹锁定对话。不过官方说明这并非端到端加密方式。",
+              "insight": null,
+              "imageUrl": null,
+              "links": [],
+              "videos": []
+            },
+            {
+              "heading": "科大讯飞1024大会发布星火X2.6：全国产算力训练",
+              "body": "10月22日讯飞发布星火X2.6，首次基于全国产算力实现代码和智能体能力突破，端侧X2.6-4B开源；API定价输入0.9元/百万tokens，比智谱、豆包还便宜；同时发布语音基座大模型SparkAudio 1.0、1299元的AI录音环、全模态座舱Space 3.0和数字员工平台WinWork。",
+              "insight": "国产算力链第一次真正跑通大模型训练，这是比跑分更重要的信号；API价格战打到这个份上，对开发者是红利，对厂商是拼成本的绞肉机——以后比的不是谁模型强，是谁亏得起。",
+              "imageUrl": null,
+              "links": [
+                {
+                  "label": "新浪财经：发布星火X2.6系列模型！科大讯飞1024大会",
+                  "url": "https://finance.sina.cn/stock/jdts/2026-10-22/detail-iniwchpc5181230.d.html"
+                }
+              ],
+              "videos": []
+            },
+            {
+              "heading": "Anthropic发布主动式Agent应用Claude Duet",
+              "body": "Anthropic以研究预览形式发布独立Agent应用Claude Duet，基于Opus 5.5：早上自动推送简报、主动提醒待办事项，可接管日程协调、财务预测乃至网页应用制作，消息发送与支付等敏感操作需用户批准；首批面向美国Pro/Max订阅者排队内测，支持6000多个连接器。",
+              "insight": null,
+              "imageUrl": null,
+              "links": [],
+              "videos": []
+            },
+            {
+              "heading": "AI找出的PHP致命漏洞公开45分钟，攻击尝试暴涨",
+              "body": "Cloudflare披露，一个经AI协助发现的PHP致命漏洞公开后，针对它的恶意尝试从公开前10小时的数千次，在45分钟内涨到数万、2小时内数十万，最终累计达数百万次；欧洲多国政府网站被迫下线打补丁，日本三菱UFJ等机构暂停部分服务。",
+              "insight": "AI找bug的时代，真正的攻防战场是\"披露到打补丁\"之间的那几个小时——漏洞公开本身成了攻击发令枪。以后安全能力的比拼，不再是谁先找到漏洞，而是谁补得更快。",
+              "imageUrl": null,
+              "links": [
+                {
+                  "label": "今日AI新闻 2026-10-23（漏洞/游说/AI差距汇总）",
+                  "url": "https://blog.amuse.ing/ai-news-2026-10-23/"
+                }
+              ],
+              "videos": []
+            },
+            {
+              "heading": "OpenAI、Anthropic、英伟达三季度游说支出齐创纪录",
+              "body": "新公开的申报文件显示，三家公司今年三季度在美国联邦游说支出各自创下历史最高：英伟达220万美元、Anthropic 210万美元、OpenAI 150万美元，议题覆盖出口管制、儿童安全、网络安全与数据中心电费。",
+              "insight": null,
+              "imageUrl": null,
+              "links": [],
+              "videos": []
+            }
+          ]
+        },
+        {
+          "key": "finance",
+          "title": "财经 / 赚钱机会",
+          "items": [
+            {
+              "heading": "A股港股昨日齐跌，创业板跌超4%",
+              "body": "10月22日A股全天调整，创业板指低开低走跌超4%失守2600点，两市成交约1.53万亿；港股深度调整，恒指跌3%、恒科指跌5%，分别创3个月新低和近1年新低；银行板块逆市活跃，工行、农行、建行涨超1%，多只银行股创新高。",
+              "insight": "跌的是高估值的AI硬件和创新药，涨的是银行——资金在\"讲故事\"和\"收利息\"之间选了后者。这种从成长切到红利的切换，往往是全市场风险偏好降温的信号，比指数点位本身更值得看。",
+              "imageUrl": "https://i0.wp.com/bccci.net/wp-content/uploads/2026/03/69a8217da310d68600f8e17c.png?resize=930%2C620&ssl=1",
+              "links": [],
+              "videos": []
+            },
+            {
+              "heading": "华夏基金宣布自购2亿元主动ETF",
+              "body": "10月22日华夏基金公告，基于对中国资本市场长期健康稳定发展的信心，公司将于10月23日出资2亿元自购旗下主动ETF。",
+              "insight": "公募自购是态度表态，不是救市承诺；新手别把\"机构抄底\"当成买入信号，看它后续净值表现比看公告管用得多。",
+              "imageUrl": null,
+              "links": [],
+              "videos": []
+            },
+            {
+              "heading": "\"A+H\"持续扩容，数量达204家",
+              "body": "传音控股10月15日登陆港交所后，\"A+H\"公司达204家；10月以来联讯仪器、江丰电子筹划递表港交所，东山精密通过港交所上市聆讯；与此同时汉得信息、歌尔股份等终止或延迟了赴港计划。",
+              "insight": null,
+              "imageUrl": null,
+              "links": [
+                {
+                  "label": "中证报：\"A+H\"上市阵容持续扩大",
+                  "url": "https://finance.sina.com.cn/stock/hkstock/2026-10-21/doc-inivxmev7654995.shtml"
+                }
+              ],
+              "videos": []
+            },
+            {
+              "heading": "财政部今日在港增发155亿元人民币国债",
+              "body": "财政部宣布通过香港金管局债务工具中央结算系统增发4笔共155亿元人民币国债，10月23日投标、10月27日交收，含2028/2029/2031/2036四期，年利率1.38%至1.87%。",
+              "insight": null,
+              "imageUrl": null,
+              "links": [
+                {
+                  "label": "华富财经：财政部将在港增发共155亿元人民币国债",
+                  "url": "https://www.quamnet.com/post/S7L5bj_ErAdbhOclSIwZA"
+                }
+              ],
+              "videos": []
+            },
+            {
+              "heading": "美股也崩：纳指创6月以来最差单日",
+              "body": "10月22日纳指跌2.6%收26008点，标普跌1.21%，道指微涨0.02%；费城半导体指数暴跌6.7%，台积电ADR跌4.5%、AMD跌8.1%、英伟达跌4.4%；Meta财报超预期但因AI支出导致十多年来首次自由现金流转负、宣布1拆2发行无表决权股筹资，跌近7%；IBM、特斯拉分别跌约7%和4%；CoreWeave跌超10%。",
+              "insight": "财报好也跌，说明市场交易的不是过去三个月，而是\"AI资本开支还能撑多久\"——当预期从\"增长\"切到\"验证\"，所有估值都要重新定价。这对重仓AI叙事的人是提醒：看财报要看现金流和资本开支，不只看营收超没超预期。",
+              "imageUrl": null,
+              "links": [],
+              "videos": [
+                {
+                  "title": "10.22美股直播：美股暴跌！和7月有何不同？AI财报超预期为何还被抛售？",
+                  "url": "https://www.youtube.com/watch?v=MI_iJTeSMEs"
+                },
+                {
+                  "title": "美股AI泡沫血洗！费半连跌8天蒸发2兆！VIX急飙（环球大线）",
+                  "url": "https://www.youtube.com/watch?v=krxnT0AwfeY"
+                }
+              ]
+            },
+            {
+              "heading": "油价飙升至5个月新高，黄金白银反跌",
+              "body": "布伦特原油涨2.9%至约112美元/桶、WTI涨至99.6美元，创5个月新高，诱因是胡塞武装袭击沙特、美国撤离驻沙特外交官；现货黄金跌1.4%至4084美元/盎司，白银跌3.5%；美国10年期国债收益率5.07%附近，市场静待10月28日美联储议息会议。",
+              "insight": null,
+              "imageUrl": null,
+              "links": [],
+              "videos": []
+            },
+            {
+              "heading": "茶百道受调查停牌，今日起剔出恒生指数系列",
+              "body": "恒生指数公司宣布，茶百道因受监管机构调查停牌，10月22日收市后以0.0001港元从恒生综合指数等系列中剔除，10月23日起生效。",
+              "insight": null,
+              "imageUrl": null,
+              "links": [
+                {
+                  "label": "新浪财经：茶百道将于10月23日剔出恒生指数系列",
+                  "url": "https://finance.sina.com.cn/stock/estate/integration/2026-10-15/doc-inivhtus1339971.shtml"
+                }
+              ],
+              "videos": []
+            }
+          ]
+        },
+        {
+          "key": "hot",
+          "title": "时事热点",
+          "items": [
+            {
+              "heading": "美国国土安全部下令联邦机构移除DeepSeek，中方批评\"罔顾元首共识\"",
+              "body": "美国国土安全部10月19日公开命令（编号2026-01，实际7月24日已签发、内部执行近3个月），要求联邦民事机构停购并清除DeepSeek及关联产品，连\"使用DeepSeek技术开发的第三方产品\"也在管控范围；中国商务部10月20日回应称美方\"罔顾中美元首达成的重要共识\"、予以\"强烈不满、坚决反对\"。命令依据2018年《联邦采购供应链安全法》，60天豁免申请窗口已于9月下旬关闭。",
+              "insight": "AI正式成为中美博弈中的\"受管制物项\"，待遇向芯片、稀土看齐。以后看AI新闻要同时看两条线：技术线（谁模型强）和管制线（谁被限制用）——后者越来越决定前者的商业天花板。",
+              "imageUrl": null,
+              "links": [
+                {
+                  "label": "日经中文网：中方批美政府禁用DeepSeek",
+                  "url": "https://zh.cn.nikkei.com/china/ccompany/64429-2026-10-22-10-06-54.html"
+                },
+                {
+                  "label": "腾讯新闻：周鸿祎谈美国封杀DeepSeek：背后不是数据安全这么简单",
+                  "url": "https://news.qq.com/rain/a/20261022A02LXQ00"
+                }
+              ],
+              "videos": [
+                {
+                  "title": "美下令联邦机构全面移除DeepSeek（蕃新闻）",
+                  "url": "https://www.youtube.com/embed/bSaAb_B2v8M"
+                }
+              ]
+            },
+            {
+              "heading": "有报道称DeepSeek正融资约1000亿元，腾讯、宁德时代领投",
+              "body": "据海外AI日报援引报道，DeepSeek正以腾讯、车载电池巨头宁德时代为首筹集约1000亿元人民币（约150亿美元），距离美国发布排除令仅过去2天。",
+              "insight": "如果属实，这是\"越制裁越加注\"的剧本：外部压力反而成了国内资本抱团的动员令。地缘越紧张，核心资产的国产替代逻辑越硬——这句话正在从口号变成真金白银。",
+              "imageUrl": null,
+              "links": [],
+              "videos": []
+            },
+            {
+              "heading": "APEC深圳峰会前，美中忙敲定投资协议",
+              "body": "南华早报独家报道，特朗普与习近平11月将在深圳APEC峰会期间举行今年第三次会晤，美中正赶在峰会前敲定具体投资协议，并就延长贸易协议展开谈判。",
+              "insight": null,
+              "imageUrl": null,
+              "links": [
+                {
+                  "label": "联合报：APEC前 美中忙敲定投資協議",
+                  "url": "https://vip.udn.com/vip/story/121523/9827268?present_date=2026-10-21&from=vipudn_xyz_subcate"
+                }
+              ],
+              "videos": []
+            },
+            {
+              "heading": "美中俄三方峰会构想：中方欢迎但未积极推动",
+              "body": "南华早报报道，中国官员私下对下月APEC深圳峰会举行美中俄三方峰会的构想表示欢迎，但并未积极推动，三方尚未讨论议程或准备工作。",
+              "insight": null,
+              "imageUrl": null,
+              "links": [
+                {
+                  "label": "联合报：港媒：中似不積極與美俄會談",
+                  "url": "https://vip.udn.com/vip/story/121523/9829805?present_date=2026-10-22&from=vipudn_xyz_subcate"
+                }
+              ],
+              "videos": []
+            },
+            {
+              "heading": "美国政府停摆第22天：4200万人食品援助或断供",
+              "body": "美国联邦政府停摆进入第22天，农业部警告若继续停摆，11月补充营养援助计划（SNAP）资金将耗尽，约4200万人受影响；参议院预算案处理屡屡受阻。",
+              "insight": null,
+              "imageUrl": null,
+              "links": [],
+              "videos": []
+            },
+            {
+              "heading": "特朗普称伊朗\"捏造船只遇袭推高油价\"，万斯谈星链争议",
+              "body": "特朗普称伊朗捏造船只遇袭事件企图推高油价；副总统万斯回应乌克兰星链争议，强调美国正致力重启俄乌谈判；纽约时报引述消息称美以计划在中期选举后再次打击伊朗，特朗普称\"很快\"就会有结果，不会与德黑兰谈判。",
+              "insight": "油价112美元的背景下，每句话都是能源政治——\"谁在操纵油价\"的叙事本身，就是油价的一部分。看这类新闻时，把\"说了什么\"和\"油价怎么走\"对照着看，会看得更明白。",
+              "imageUrl": "https://www.startrader.com/wp-content/uploads/2026/05/20260511-103114-710x372.jpg",
+              "links": [],
+              "videos": [
+                {
+                  "title": "VOA今日焦点 2026-10-23：中俄防务合作/伊朗油价/星链争议",
+                  "url": "https://www.youtube.com/watch?v=9UUN_Jpk-R4"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": "life",
+          "title": "生活情报",
+          "items": [
+            {
+              "heading": "京津冀集成电路秋季双选会：41家企业放725个岗位",
+              "body": "10月初在北京集成电路产教融合基地举办的专场双选会汇集北方华创、华大九天、燕东微等41家龙头企业，岗位覆盖芯片设计、晶圆制造、半导体装备、材料器件、封测研发全链条，累计释放725个岗位，现场达成求职意向1066人次，线上线下同步进行。",
+              "insight": null,
+              "imageUrl": "https://campuscholar.com/wp-content/uploads/2026/07/cleanroom-pristine-semiconductor-fabrication.webp",
+              "links": [
+                {
+                  "label": "北京日报：京津冀集成电路双选会释放725个岗位",
+                  "url": "https://news.bjd.com.cn/2026/10/07/11986080.shtml"
+                }
+              ],
+              "videos": []
+            },
+            {
+              "heading": "川大秋招直击：半导体高薪抢人，但对口简历只有一成",
+              "body": "10月12日川大秋招专场上，多家半导体企业HR表示高薪抢人，但\"真正微电子完全对口的简历大概只有一成\"；HR更看重自驱力、学习能力，会抠简历细节追问专业问题，\"写得天花乱坠一问就露馅\"。",
+              "insight": "缺口不在\"人头\"在\"对口\"——对应用物理的同学这是好消息：你的数理基础+实验项目，恰恰是芯片企业愿意赌成长潜力的底子。写简历别罗列课程，把SRTP/实验里\"解决了什么问题\"写清楚。",
+              "imageUrl": null,
+              "links": [
+                {
+                  "label": "封面新闻：半导体行业高薪\"抢人\"",
+                  "url": "https://finance.sina.com.cn/jjxw/2026-10-13/doc-inivawnf8775621.shtml"
+                }
+              ],
+              "videos": []
+            },
+            {
+              "heading": "物理实验竞赛（创新）初评结果仍未公布",
+              "body": "第十二届全国大学生物理实验竞赛（创新）初评结果此前称10月中下旬公布，截至目前仍未公布，继续盯后续通知。",
+              "insight": null,
+              "imageUrl": null,
+              "links": [],
+              "videos": []
+            },
+            {
+              "heading": "iPhone Air成苹果史上贬值最快机型，折叠屏iPhone Duo今日发售",
+              "body": "数据显示iPhone Air上市十周平均贬值44.3%（1TB版达47.7%），首发7999元现回收仅3500元左右，被多家回收平台列为苹果史上贬值最快iPhone；折叠屏iPhone Duo 10月23日正式发售。",
+              "insight": null,
+              "imageUrl": null,
+              "links": [],
+              "videos": []
+            },
+            {
+              "heading": "健康一句话",
+              "body": "换季叠加秋招熬夜季，规律作息和运动比任何补剂都管用；流感季将至，人多的招聘会现场戴口罩不丢人。",
+              "insight": null,
+              "imageUrl": null,
+              "links": [],
+              "videos": []
+            }
+          ]
+        },
+        {
+          "key": "xianyu",
+          "title": "闲鱼风向标",
+          "items": [
+            {
+              "heading": "iPhone Air二手跳水：首发7999，现回收3500",
+              "body": "爱回收平台上成色完美的256GB iPhone Air补贴后到手约3547元，而同平台iPhone 17反而能卖4300元；闲鱼256GB成交均价约4188元，看跌指数86%。解读：官方上市约三个月直降2000，击穿了二手锚定价——新机渠道价才是二手价的定海神针，官网标价涨回去也没用。",
+              "insight": null,
+              "imageUrl": null,
+              "links": [],
+              "videos": []
+            },
+            {
+              "heading": "二手显卡当下最不划算：只比全新带保便宜400块",
+              "body": "6750GRE 12G二手价从7月1300出头一路爬到1500以上，而9月有商家把全新带保的老卡以1999元上架，全新与二手差价只剩400块；同期还曝出闲鱼买到矿卡大修伪装自用的案例。解读：全新涨价把买家赶进二手，二手需求暴增跟着涨，\"捡漏空间\"被这条传导链一点点吃掉——最需要省钱的人，反而最不该现在进二手显卡。",
+              "insight": null,
+              "imageUrl": "https://images1.vinted.net/t/06_02007_nchz1pW4gj78DcGfP337hZQv/310x430/1781695879.webp?s=31f13601209b76a6f01f0cae0ce707a02ec59a0b",
+              "links": [
+                {
+                  "label": "什么值得买：二手显卡只比全新便宜400块",
+                  "url": "https://post.smzdm.com/p/ad79rvzn/"
+                }
+              ],
+              "videos": []
+            },
+            {
+              "heading": "折叠屏iPhone Duo今日发售：溢价窗口按天计",
+              "body": "闲鱼256GB版成交均价2.14-2.2万元，较官方15999元溢价5000-6000元；但最高溢价已从初期的5.8万元缩水至7000元左右，业内建议发售前后尽早出手。解读：新机溢价=信息差×产能缺口，产能爬坡=溢价蒸发；黄牛游戏只剩发售当日，想套利记住快进快出。",
+              "insight": null,
+              "imageUrl": null,
+              "links": [
+                {
+                  "label": "新浪：iPhone Duo抢到后如何转售",
+                  "url": "https://k.sina.cn/article_7879996057_1d5af329906802144e.html?from=digit"
+                }
+              ],
+              "videos": []
+            },
+            {
+              "heading": "二手大存储千元机成性价比洼地",
+              "body": "存储涨价逼得千元新机退回8GB+128GB，256GB版本几近绝迹；闲鱼上iPhone 15 Pro Max 256GB约4250元起、11 Pro Max 95新约1400元。解读：涨价周期里真正的\"等等党洼地\"不是等新机降价，而是被新机衬托出来的上代大存储旗舰——体验只降5%，价格近乎腰斩。",
+              "insight": null,
+              "imageUrl": null,
+              "links": [
+                {
+                  "label": "新浪：256G存储的二手千元手机推荐",
+                  "url": "https://k.sina.cn/article_7879996097_1d5af32c106804z7cm.html"
+                }
+              ],
+              "videos": []
+            },
+            {
+              "heading": "捡漏机会：没涨价的全新低价线+一直在跌的CPU",
+              "body": "这轮涨价集中在高价线：RX7600全新1459元起、RTX5050 2279元、RTX5060 2544元，低价线纹丝不动；CPU是全场唯一闭眼买的二手品类，锐龙5 9600X散片已从1949元跌到900元出头。解读：预算3000内装机根本不用进二手市场冒险；真想捡漏，盯\"没涨价的全新低价线\"和\"一直在跌的CPU\"，别去挤最烫的二手显卡。",
+              "insight": null,
+              "imageUrl": null,
+              "links": [],
+              "videos": []
+            }
+          ]
+        },
+        {
+          "key": "figures",
+          "title": "名人事件",
+          "items": [
+            {
+              "heading": "黄仁勋BG2专访：推理算力将增长10亿倍，驳斥AI威胁论",
+              "body": "10月15日播出的BG2 Pod第三期专访中，黄仁勋断言推理算力将增长10亿倍、本十年末全球AI基建年规模达3-4万亿美元；他驳斥AI威胁论，称2030年前AI导致人类毁灭的概率为0%，并质疑末日论调背后的商业动机——\"当最先进模型的开发者一边扩算力赚钱，一边喊世界末日，这种矛盾本身值得追问\"，认为对方真正想要的可能是更高监管门槛下的领先位置或责任豁免。",
+              "insight": "注意他的双重身份：卖铲子的人永远会说多买铲子。但他把安全争论从技术判断推到商业利益层面，这个视角本身比结论更有用——下次再看到\"AI威胁论\"，先问三个问题：谁在说、说了之后谁获益、谁会因此被挡在门外。",
+              "imageUrl": "https://capitalmetrichub.com/wp-content/uploads/2026/08/nvidia-ceo-jensen-huang-at-siggraph-1200x675.jpeg",
+              "links": [
+                {
+                  "label": "新浪财经：黄仁勋最新深度访谈：推理算力将增长10亿倍",
+                  "url": "https://t.cj.sina.com.cn/articles/view/7980967831/1dbb3e79700101i6ei?finpagefr=p_103"
+                },
+                {
+                  "label": "雪球：黄仁勋驳斥AI威胁论46分钟访谈全文",
+                  "url": "https://www.xueqiu.com/1488815203/410097272"
+                }
+              ],
+              "videos": []
+            },
+            {
+              "heading": "黄仁勋×Lex Fridman：张忠谋\"一通改变一切的电话\"",
+              "body": "10月15日发布的对谈中，黄仁勋回忆90年代末为找芯片代工厂，多次致电台积电美国办事处只听到语音留言，最终写长信给张忠谋，某天深夜接到\"我是台积电的张忠谋\"的电话；张忠谋强调诚信、公司治理与长期伙伴关系，促成双方30年合作，台积电如今代工英伟达全部先进AI芯片。",
+              "insight": "供应链关系的本质是\"在你还很小的时候就赌你\"——张忠谋赌的是人，不是当时的英伟达。这种早期信任的复利，30年后变成了AI时代最硬的护城河。对普通人的启发：雪中送炭的合作，回报率永远高于锦上添花。",
+              "imageUrl": null,
+              "links": [
+                {
+                  "label": "凤凰网：黄仁勋谈早年结缘台积电",
+                  "url": "https://original.ifeng.com/c/8xF9ujuSADU"
+                }
+              ],
+              "videos": []
+            },
+            {
+              "heading": "孙宇晨×Alan播客：全AI托管人生+\"20岁零资源怎么重开\"",
+              "body": "约两周前播出的播客对谈中，孙宇晨透露自己已实现\"全AI托管\"日常：每餐拍照丢给Claude算卡路里，Oura Ring抓睡眠数据、训练视频由AI记录组数重量并规划渐进超载，所有数据存为本地Markdown实现\"数据本地化、模型解耦\"；被问及20岁零资源如何重开，他给出三套\"操作系统\"：孙学（认知升维）、薄肌（身体是核心资产）、黄毛理论（屏蔽外界噪音、彻底执行）。10月初他还在TOKEN2049/DAS Asia上提出\"AI时代的诺贝尔奖\"（孙宇晨奖），断言未来五年\"AI智能体使用加密货币将成为行业最大应用场景\"。",
+              "insight": "抛开争议看方法论，增量在于他把\"用AI\"从\"聊天提问\"升级成了\"个人数据资产+多模型API\"的操作系统——数据存在自己手里（本地md），智能向全市场租（哪个模型强用哪个）。这套\"数据主权\"思路，对学生同样适用：你的笔记、实验数据、学习记录，就是你自己的训练集。",
+              "imageUrl": null,
+              "links": [
+                {
+                  "label": "TechFlow：播客笔记｜Alan对话孙宇晨",
+                  "url": "https://www.techflowpost.com/article/34433"
+                },
+                {
+                  "label": "每日科技网：孙宇晨亮相TOKEN2049及DAS Asia",
+                  "url": "https://www.newskj.org/kejixun/204786.html"
+                }
+              ],
+              "videos": []
+            }
+          ]
+        }
+      ]
     }
   }
 }
