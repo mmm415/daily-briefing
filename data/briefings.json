@@ -3737,6 +3737,10 @@
                 {
                   "label": "新浪财经：史上最大IPO要来了：807亿亏损是假的，4500亿账单是真的",
                   "url": "https://finance.sina.com.cn/wm/2026-10-22/doc-iniwavxm5886750.shtml"
+                },
+                {
+                  "label": "Threads 热门解读帖：807亿亏损中720亿是非现金会计费用",
+                  "url": "https://www.threads.com/@thecomplexrebel/post/DewyYs5kWIl"
                 }
               ],
               "videos": []
@@ -3950,7 +3954,12 @@
                   "url": "https://vip.udn.com/vip/story/121523/9829805?present_date=2026-10-22&from=vipudn_xyz_subcate"
                 }
               ],
-              "videos": []
+              "videos": [
+                {
+                  "title": "在中国举行中俄美三方会晤？特朗普称已准备好（八点最热报）",
+                  "url": "https://www.youtube.com/watch?v=MuNpmEpCoGA"
+                }
+              ]
             },
             {
               "heading": "美国政府停摆第22天：4200万人食品援助或断供",
@@ -4111,7 +4120,12 @@
                   "url": "https://www.xueqiu.com/1488815203/410097272"
                 }
               ],
-              "videos": []
+              "videos": [
+                {
+                  "title": "黄仁勋做客BG2 Pod中文解说：推理算力增长10亿倍、AI基建瓶颈转向土地电力",
+                  "url": "https://www.youtube.com/watch?v=8IOqkjte3no"
+                }
+              ]
             },
             {
               "heading": "黄仁勋×Lex Fridman：张忠谋\"一通改变一切的电话\"",
@@ -4141,7 +4155,12 @@
                   "url": "https://www.newskj.org/kejixun/204786.html"
                 }
               ],
-              "videos": []
+              "videos": [
+                {
+                  "title": "对话孙宇晨：年轻人如何抓住AI时代的机会？（邵艾伦 4小时深度对谈）",
+                  "url": "https://www.youtube.com/watch?v=0Z-vhBvBmUY"
+                }
+              ]
             }
           ]
         }
