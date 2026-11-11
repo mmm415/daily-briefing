@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="color-scheme" content="light dark" />
+<link rel="icon" href="data:," />
+<title>左右护法 · 圆上点到直线的距离</title>
+<style>
+:root {
+--bg: #faf7f2;
+--surface: #ffffff;
+--surface-2: #f3ede3;
+--ink: #23201c;
+--ink-soft: #5c554c;
+--line: #ddd2c2;
+--red: #b3271e;
+--red-soft: #fbeae8;
+--blue: #1d4ed8;
+--magenta: #b02a7a;
+--gold: #9a6a12;
+--gold-soft: #faf0d7;
+--highlight: #fdf3d8;
+--highlight-border: #d9a514;
+--shadow: 0 1px 3px rgba(60, 45, 20,.10), 0 6px 18px rgba(60, 45, 20,.06);
+}
+@media (prefers-color-scheme: dark) {
+:root {
+--bg: #171512;
+--surface: #211e1a;
+--surface-2: #2a2621;
+--ink: #f0ebe3;
+--ink-soft: #b8b0a2;
+--line: #453e34;
+--red: #f08a80;
+--red-soft: #3d2320;
+--blue: #93b4f5;
+--magenta: #eba3cd;
+--gold: #e3b959;
+--gold-soft: #3a3018;
+--highlight: #3d3419;
+--highlight-border: #d9a514;
+--shadow: 0 1px 3px rgba(0,0,0,.4), 0 6px 18px rgba(0,0,0,.3);
+}
+}
+* { box-sizing: border-box;}
+html { -webkit-text-size-adjust: 100%;}
+body {
+margin: 0;
+background: var(--bg);
+color: var(--ink);
+font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", system-ui, sans-serif;
+line-height: 1.65;
+font-size: 16px;
+}
+input[type="range"] { min-height: 2.25rem;}
+.wrap { max-width: 1060px; margin: 0 auto; padding: 20px 16px 48px;}
+
+.var { font-family: Georgia, "Times New Roman", "Songti SC", serif; font-style: italic;}
+
+section { margin-top: 28px;}
+h2 {
+font-size: 1.25rem; margin: 0 0 12px;
+padding-bottom: 8px; border-bottom: 2px solid var(--red);
+display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap;
+}
+h2.sub { font-size:.85rem; color: var(--ink-soft); font-weight: 400;}
+
+/* —— 交互区 —— */
+.lab {
+display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+gap: 16px; align-items: start;
+}
+.card {
+background: var(--surface); border: 1px solid var(--line); border-radius: 12px;
+box-shadow: var(--shadow); padding: 16px;
+}
+.card h3 { margin: 0 0 10px; font-size: 1.05rem;}
+svg.board { width: 100%; height: auto; display: block;}
+svg.board.dragging { cursor: grabbing;}
+.legend { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size:.88rem; color: var(--ink-soft); margin-top: 8px;}
+.legend.sw { display: inline-block; width: 22px; height: 0; border-top: 3px solid var(--ink); vertical-align: middle; margin-right: 5px;}
+.legend.sw.blue { border-top-color: var(--blue);}
+.legend.sw.dash { border-top-style: dashed; border-top-color: var(--magenta);}
+.legend.dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; background: var(--red); vertical-align: middle; margin-right: 5px;}
+.drag-hint { font-size:.88rem; color: var(--ink-soft); margin-top: 8px;}
+.drag-hint b { color: var(--blue);}
+
+.slider-row { margin-bottom: 14px;}
+.slider-row label { display: flex; justify-content: space-between; align-items: baseline; font-weight: 600; margin-bottom: 2px;}
+.slider-row label.val { font-family: Georgia, serif; font-size: 1.15rem; color: var(--red);}
+.slider-row.hint { font-size:.82rem; color: var(--ink-soft);}
+input[type="range"] { width: 100%; accent-color: var(--red); cursor: pointer;}
+
+.readout { border-top: 1px dashed var(--line); padding-top: 12px;}
+.readout.line-item { display: flex; justify-content: space-between; gap: 10px; padding: 5px 0; font-size:.97rem;}
+.readout.line-item.cnt { font-weight: 700; white-space: nowrap;}
+.k-big {
+margin-top: 12px; text-align: center; padding: 12px;
+background: var(--red-soft); border-radius: 10px;
+}
+.k-big.k { font-size: 2.4rem; font-weight: 800; color: var(--red); line-height: 1.1; font-family: Georgia, serif;}
+.k-big.case-name { font-weight: 700; margin-top: 2px;}
+.note-dltb {
+display: none; margin-top: 10px; padding: 8px 12px; border-radius: 8px;
+background: var(--gold-soft); color: var(--ink); font-size:.9rem;
+}
+.note-dltb.show { display: block;}
+
+@media (max-width: 760px) {
+.lab { grid-template-columns: 1fr;}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<section aria-labelledby="lab-h">
+<h2 id="lab-h">拖一拖 <span class="sub">d 是圆心到直线的距离，b 是虚线到直线的距离</span></h2>
+<div class="lab">
+<div class="card">
+<svg class="board" id="board" viewBox="0 0 560 500" role="img" aria-label="圆、直线与两条平行虚线示意图，直线可以拖动"></svg>
+<div class="legend">
+<span><span class="sw"></span>圆（半径 R）</span>
+<span><span class="sw blue"></span>直线 l（可拖动）</span>
+<span><span class="sw dash"></span>虚线（距 l 为 b）</span>
+<span><span class="dot"></span>交点（圆上到 l 距离为 b 的点）</span>
+</div>
+<p class="drag-hint">提示：手指或鼠标<b>按住蓝线</b>拖动，改的是 <span class="var">d</span>；临界位置（如 <span class="var">d + b = R</span>）用右侧滑块微调更准。</p>
+</div>
+<div class="card">
+<h3>调参数</h3>
+<div class="slider-row">
+<label for="sR">半径 <span class="var">R</span> <span class="val" id="vR">3</span></label>
+<input type="range" id="sR" min="1" max="5" step="0.5" value="3" />
+<div class="hint">圆的大小</div>
+</div>
+<div class="slider-row">
+<label for="sD">圆心距 <span class="var">d</span> <span class="val" id="vD">2</span></label>
+<input type="range" id="sD" min="0" max="8" step="0.5" value="2" />
+<div class="hint">圆心到直线 l 的距离（也可以直接拖蓝线）</div>
+</div>
+<div class="slider-row">
+<label for="sB">虚线距 <span class="var">b</span> <span class="val" id="vB">1</span></label>
+<input type="range" id="sB" min="0.5" max="3" step="0.5" value="1" />
+<div class="hint">两条虚线到直线 l 的距离</div>
+</div>
+<div class="readout" aria-live="polite">
+<div class="line-item">
+<span>近虚线：距圆心 <span class="var">|d − b|</span> = <b id="a1">1</b>，与 <span class="var">R</span> 比：<span id="c1">1 &lt; 3</span></span>
+<span class="cnt" id="n1">2 个交点</span>
+</div>
+<div class="line-item">
+<span>远虚线：距圆心 <span class="var">d + b</span> = <b id="a2">3</b>，与 <span class="var">R</span> 比：<span id="c2">3 = 3</span></span>
+<span class="cnt" id="n2">1 个交点</span>
+</div>
+<div class="note-dltb" id="noteDltB">现在 <span class="var">d &lt; b</span>：近虚线翻到了直线另一侧，它距圆心是 <span class="var">b − d</span>，所以一般式写 <span class="var">|d − b|</span>。</div>
+<div class="k-big">
+<div>圆上到直线距离为 <span class="var">b</span> 的点共有</div>
+<div class="k">k = <span id="kVal">3</span></div>
+<div class="case-name" id="caseName">情况②：d + b = R，远虚线与圆相切</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+</div>
+
+<script>
+(function () {
+var NS = "http://www.w3.org/2000/svg";
+var board = document.getElementById("board");
+var sR = document.getElementById("sR"), sD = document.getElementById("sD"), sB = document.getElementById("sB");
+var state = { R: 3, d: 2, b: 1};
+var dragging = false;
+var CX = 200, CY = 250, UNIT = 31; // 圆心屏幕坐标；UNIT 每帧按内容自动缩放
+var EPS = 1e-9;
+
+function el(tag, attrs) {
+var e = document.createElementNS(NS, tag);
+for (var k in attrs) e.setAttribute(k, attrs[k]);
+return e;
+}
+function X(x) { return CX + x * UNIT;}
+function Y(y) { return CY - y * UNIT;}
+function fmt(v) { return (Math.round(v * 10) / 10).toString();}
+function cmp(a, R) { return a < R - EPS? -1: (a > R + EPS? 1: 0);}
+function countFor(a, R) { var c = cmp(a, R); return c < 0? 2: (c === 0? 1: 0);}
+function cmpText(a, R) {
+var c = cmp(a, R);
+return fmt(a) + (c < 0? " < ": (c === 0? " = ": " > ")) + fmt(R);
+}
+function clamp(v, lo, hi) { return v < lo? lo: (v > hi? hi: v);}
+
+// 把指针的 clientX 换算成数学坐标里的 d（直线只能沿法线方向，即水平方向移动）
+function dFromClientX(clientX) {
+var rect = board.getBoundingClientRect();
+var svgX = (clientX - rect.left) * 560 / rect.width;
+return clamp(Math.round((svgX - CX) / UNIT * 10) / 10, 0, 8);
+}
+
+function draw() {
+var R = state.R, d = state.d, b = state.b;
+document.getElementById("vR").textContent = fmt(R);
+document.getElementById("vD").textContent = fmt(d);
+document.getElementById("vB").textContent = fmt(b);
+if (!dragging) sD.value = d;
+
+var a1 = Math.abs(d - b); // 近虚线距圆心
+var a2 = d + b; // 远虚线距圆心
+var xNear = d - b; // 近虚线在坐标中的位置（d<b 时为负）
+var xFar = d + b;
+var n1 = countFor(a1, R), n2 = countFor(a2, R), k = n1 + n2;
+
+// 自动缩放：d 拖到最大时，远虚线（d+b 处）和圆都必须完整留在画布内
+var rightNeed = Math.max(d + b, R);
+var leftNeed = Math.max(R, b - d, 0);
+UNIT = Math.min(34, (540 - CX) / (rightNeed + 1.0), (CX - 12) / (leftNeed + 1.0), 232 / (R + 0.6));
+if (UNIT < 9) UNIT = 9;
+
+while (board.firstChild) board.removeChild(board.firstChild);
+var css = getComputedStyle(document.documentElement);
+var colInk = css.getPropertyValue("--ink").trim() || "#23201c";
+var colSoft = css.getPropertyValue("--ink-soft").trim() || "#5c554c";
+var colGrid = css.getPropertyValue("--line").trim() || "#ddd2c2";
+var colBlue = css.getPropertyValue("--blue").trim() || "#1d4ed8";
+var colMag = css.getPropertyValue("--magenta").trim() || "#b02a7a";
+var colRed = css.getPropertyValue("--red").trim() || "#b3271e";
+var colGold = css.getPropertyValue("--gold").trim() || "#9a6a12";
+var colSurf = css.getPropertyValue("--surface").trim() || "#fff";
+
+// 网格（整数刻度）
+for (var g = -7; g <= 10; g++) {
+board.appendChild(el("line", { x1: X(g), y1: 6, x2: X(g), y2: 494, stroke: colGrid, "stroke-width": g === 0? 1.4: 0.6, opacity: g === 0? 0.9: 0.55}));
+}
+for (var h = -8; h <= 8; h++) {
+board.appendChild(el("line", { x1: 6, y1: Y(h), x2: 554, y2: Y(h), stroke: colGrid, "stroke-width": h === 0? 1.4: 0.6, opacity: h === 0? 0.9: 0.55}));
+}
+
+// 圆
+board.appendChild(el("circle", { cx: CX, cy: CY, r: R * UNIT, fill: "none", stroke: colInk, "stroke-width": 2.6}));
+// 半径示意线（指向左下 225°）
+var rx = -R * Math.SQRT1_2, ry = -R * Math.SQRT1_2;
+board.appendChild(el("line", { x1: CX, y1: CY, x2: X(rx), y2: Y(ry), stroke: colSoft, "stroke-width": 1.4}));
+var rt = el("text", { x: X(rx / 2) - 22, y: Y(ry / 2) + 4, "font-size": 14, fill: colSoft, "font-style": "italic", "font-family": "Georgia,serif"});
+rt.textContent = "R=" + fmt(R); board.appendChild(rt);
+
+// 两条虚线；两线靠得近时标注上下错层，避免文字重叠
+function vline(x, label, labelDy, anchor, tx) {
+board.appendChild(el("line", { x1: X(x), y1: 10, x2: X(x), y2: 490, stroke: colMag, "stroke-width": 2, "stroke-dasharray": "8 6", "pointer-events": "none"}));
+var t = el("text", { x: tx, y: labelDy, "font-size": 13.5, fill: colMag, "text-anchor": anchor, "font-weight": 700});
+t.textContent = label; board.appendChild(t);
+}
+// 标注位置：线靠近画布边缘时把文字往图内收，保证标签不出界
+function labelPos(x, dy) {
+var px = X(x);
+if (px > 430) return { dy: dy, anchor: "end", tx: px - 6 };
+if (px < 130) return { dy: dy, anchor: "start", tx: px + 6 };
+return { dy: dy, anchor: "middle", tx: px };
+}
+var gapPx = Math.abs(X(xFar) - X(xNear));
+var stagger = gapPx < 150; // 两线靠得近时标注上下错层
+var pn = labelPos(xNear, 24), pf = labelPos(xFar, stagger? 46: 24);
+vline(xNear, "近虚线 |d−b|=" + fmt(a1), pn.dy, pn.anchor, pn.tx);
+vline(xFar, "远虚线 d+b=" + fmt(a2), pf.dy, pf.anchor, pf.tx);
+// 直线 l（实线）+ 加粗透明抓取区
+board.appendChild(el("line", { x1: X(d), y1: 10, x2: X(d), y2: 490, stroke: colBlue, "stroke-width": dragging? 3.6: 2.8, "pointer-events": "none"}));
+var hit = el("line", { x1: X(d), y1: 0, x2: X(d), y2: 500, stroke: "rgba(0,0,0,0)", "stroke-width": 48});
+hit.style.cursor = "ew-resize";
+hit.style.touchAction = "none";
+hit.addEventListener("pointerdown", onLineDown);
+board.appendChild(hit);
+var lt = el("text", { x: X(d), y: 478, "font-size": 14, fill: colBlue, "text-anchor": "middle", "font-weight": 700, "font-style": "italic", "font-family": "Georgia,serif", "pointer-events": "none"});
+lt.textContent = "l"; board.appendChild(lt);
+
+// d 的标注（圆心→直线）
+if (d > 0) {
+var dy = CY - 14;
+board.appendChild(el("line", { x1: CX, y1: dy, x2: X(d), y2: dy, stroke: colGold, "stroke-width": 2, "pointer-events": "none"}));
+board.appendChild(el("line", { x1: CX, y1: dy - 5, x2: CX, y2: dy + 5, stroke: colGold, "stroke-width": 2, "pointer-events": "none"}));
+board.appendChild(el("line", { x1: X(d), y1: dy - 5, x2: X(d), y2: dy + 5, stroke: colGold, "stroke-width": 2, "pointer-events": "none"}));
+var dt = el("text", { x: (CX + X(d)) / 2, y: dy - 7, "font-size": 13.5, fill: colGold, "text-anchor": "middle", "font-style": "italic", "font-family": "Georgia,serif"});
+dt.textContent = "d=" + fmt(d); board.appendChild(dt);
+}
+
+// 交点
+function plotPoints(xLine, a) {
+var c = cmp(a, R);
+if (c > 0) return;
+if (c === 0) {
+board.appendChild(el("circle", { cx: X(xLine), cy: CY, r: 6.5, fill: colRed, stroke: colSurf, "stroke-width": 2, "pointer-events": "none"}));
+} else {
+var s = Math.sqrt(R * R - a * a);
+board.appendChild(el("circle", { cx: X(xLine), cy: Y(s), r: 6.5, fill: colRed, stroke: colSurf, "stroke-width": 2, "pointer-events": "none"}));
+board.appendChild(el("circle", { cx: X(xLine), cy: Y(-s), r: 6.5, fill: colRed, stroke: colSurf, "stroke-width": 2, "pointer-events": "none"}));
+}
+}
+plotPoints(xNear, a1);
+plotPoints(xFar, a2);
+
+// 圆心
+board.appendChild(el("circle", { cx: CX, cy: CY, r: 4, fill: colInk, "pointer-events": "none"}));
+var ot = el("text", { x: CX - 8, y: CY - 10, "font-size": 14, fill: colInk, "text-anchor": "end"});
+ot.textContent = "O"; board.appendChild(ot);
+
+// 读数面板
+document.getElementById("a1").textContent = fmt(a1);
+document.getElementById("a2").textContent = fmt(a2);
+document.getElementById("c1").textContent = cmpText(a1, R);
+document.getElementById("c2").textContent = cmpText(a2, R);
+document.getElementById("n1").textContent = n1 + " 个交点";
+document.getElementById("n2").textContent = n2 + " 个交点";
+document.getElementById("kVal").textContent = k;
+document.getElementById("noteDltB").className = "note-dltb" + (d < b - EPS? " show": "");
+
+var names = {
+4: "情况①：d + b < R，两条虚线都割圆",
+3: "情况②：d + b = R，远虚线与圆相切",
+2: "情况③：|d − b| < R < d + b，只有近虚线割圆",
+1: "情况④：|d − b| = R，近虚线与圆相切",
+0: "情况⑤：|d − b| > R，两条虚线都够不着圆"
+};
+document.getElementById("caseName").textContent = names[k];
+}
+
+// —— 拖动直线（Pointer Events，沿法线方向移动，只改 d） ——
+function onLineDown(ev) {
+ev.preventDefault();
+dragging = true;
+board.classList.add("dragging");
+try { ev.target.setPointerCapture(ev.pointerId);} catch (e) {}
+state.d = dFromClientX(ev.clientX);
+draw();
+}
+window.addEventListener("pointermove", function (ev) {
+if (!dragging) return;
+var nd = dFromClientX(ev.clientX);
+if (nd!== state.d) { state.d = nd; draw();}
+});
+function endDrag() {
+if (!dragging) return;
+dragging = false;
+board.classList.remove("dragging");
+sD.value = state.d; // 拖完把滑块吸附到最近的 0.5 刻度，方便微调到临界值
+draw();
+}
+window.addEventListener("pointerup", endDrag);
+window.addEventListener("pointercancel", endDrag);
+
+sR.addEventListener("input", function () { state.R = parseFloat(sR.value); draw();});
+sB.addEventListener("input", function () { state.b = parseFloat(sB.value); draw();});
+sD.addEventListener("input", function () { state.d = parseFloat(sD.value); draw();});
+if (window.matchMedia) {
+var mq = window.matchMedia("(prefers-color-scheme: dark)");
+if (mq.addEventListener) mq.addEventListener("change", draw);
+}
+draw();
+})();
+</script>
+</body>
+</html>
