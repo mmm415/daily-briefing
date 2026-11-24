@@ -15912,6 +15912,467 @@
           ]
         }
       ]
+    },
+    "2026-11-24": {
+      "date": "2026-11-24",
+      "overview": "今天最大的信号是市场在“信人”和“信钱”之间摇摆：黄仁勋辞职11天就被董事会全票请回，英伟达单日涨回近万亿美元市值；可就在同一周，全球市场刚经历股金币三杀、抹掉9万亿美元——大家信的不是AI赚不赚钱，而是主心骨还在不在。",
+      "sections": [
+        {
+          "items": [
+            {
+              "body": "英伟达11月23日晚公告，董事会一致投票恢复黄仁勋的总裁、CEO及董事职务，距他11月12日辞职仅过去11天，而六天前董事会主席还在财报会上说“无意让其复任”。消息出后英伟达开盘涨32%至165.61美元，单日市值回血约9200亿美元，但仍低于辞职当天收盘价166.19美元，更低于10月28日的215.38美元。SEC对公司的会计调查尚未了结，12月还有三场国会听证在等着；复职的同时董事会新设了国家安全与出口管制监督委员会，并要新聘一名直接向董事会汇报的首席合规官。公司三季度营收1158.4亿美元、同比翻倍，净利润652.9亿美元，四季度指引1300亿美元。",
+              "heading": "黄仁勋复职：辞职11天被董事会全票请回，英伟达单日涨回近万亿美元",
+              "imageUrl": "https://owninnervoice.com/wp-content/uploads/2025/05/250529-Jensen-Huang-ch-1346-7b47a1-800x535-1-768x514.jpg",
+              "insight": "董事会六天前还说“不”，六天后全票请回——公司治理让位于“没有他就没有英伟达”的市场共识；但复职治的是“谁掌舵”的恐慌，治不了估值、监管和天量承诺的账，涨回去的只是恐慌的那一半。",
+              "links": [
+                {
+                  "label": "新浪财经：黄仁勋回来了！六天前董事会坚决拒绝，如今全票请回",
+                  "url": "https://finance.sina.cn/2026-11-23/detail-iniztwiu2214543.d.html"
+                },
+                {
+                  "label": "Facebook热帖：黄仁勋回归，董事会一致通过即刻复任（1.9K赞、100评论）",
+                  "url": "https://www.facebook.com/iLifePost/posts/pfbid0LCcnN6q1jJvdKHPBXWEeXMNYv3htayefX4rCExN5BJoD2DzSBcsKAM4ipkFg4FXAl"
+                }
+              ],
+              "videos": [
+                {
+                  "title": "何频 晓洋：黄仁勋要回来了吗？硅谷要他回来，财长要英伟达换人",
+                  "url": "https://www.youtube.com/watch?v=IBkGgnHjAoI"
+                },
+                {
+                  "title": "一个视频看懂：黄仁勋为何回不去？背后的媒体算计与政治角力",
+                  "url": "https://www.youtube.com/watch?v=Y4BbXRCmAR0"
+                }
+              ]
+            },
+            {
+              "body": "智谱11月23日上线GLM-5.4，首个基于Loop Transformer架构的旗舰模型：7500亿参数，28层共享层循环执行两遍，官方称推理能力可与2-3万亿参数模型媲美，支持100万上下文、新增视觉能力，编程扩展到视频、游戏、工程建模和交互式3D。模型已进GLM Coding Plan订阅（Lite每月18美元起），用户额度提到1.5倍，但没有发布会、没有技术报告、没有跑分，标准API和权重开放都还在等；智谱预计12月接力推出约3万亿参数的GLM-5.5。",
+              "heading": "智谱GLM-5.4上线：28层循环跑两遍，7500亿参数号称媲美3万亿模型",
+              "imageUrl": null,
+              "insight": "中国大模型竞争的轴变了：不再比谁参数多，比谁把同样的参数“多用一遍”——省算力就是省成本，这才是能长期打价格战的底气；但没跑分就敢叫板3万亿，信几分要等独立实测。",
+              "links": [
+                {
+                  "label": "掘金：GLM-5.4发布，28层循环两遍",
+                  "url": "https://juejin.cn/post/7711176736180830223"
+                },
+                {
+                  "label": "TechNode：Zhipu rolls out GLM-5.4 with vision and million-token context",
+                  "url": "https://technode.com/2026/11/23/zhipu-rolls-out-glm-5-4-with-vision-and-million-token-context/"
+                }
+              ],
+              "videos": [
+                {
+                  "title": "GLM-5.4: How Z.ai's Looped Transformer Claims to Match 3T Models",
+                  "url": "https://www.youtube.com/watch?v=UAStEBPhs9M"
+                },
+                {
+                  "title": "GLM-5.4 IS HERE! LOOPED TRANSFORMER?! NO BENCHMARKS?!",
+                  "url": "https://www.youtube.com/watch?v=0dOluS-T4yc"
+                }
+              ]
+            },
+            {
+              "body": "据OpenRouter数据，11月16日至22日全球大模型总调用量210万亿Token、环比增长8.25%，其中中国模型111.16万亿、美国19.21万亿，中国连续30周超过美国。全球调用量前五里有四款中国模型：DeepSeek V4.1-Flash-1017连续五周第一，周调用65万亿、环比增长16%；小米MiMo-V2.6-Flash单周大涨461%，重回榜单第七。",
+              "heading": "中国大模型调用量连续30周全球第一，DeepSeek五周霸榜",
+              "imageUrl": null,
+              "insight": null,
+              "links": [
+                {
+                  "label": "每经网：中国大模型周调用量连续30周全球第一",
+                  "url": "https://www.nbd.com.cn/articles/2026-11-23/4655481.html"
+                }
+              ],
+              "videos": []
+            },
+            {
+              "body": "英伟达临时CEO科莱特·克雷斯在11月17日财报会上披露，公司已停止向中国出货获美政府许可的H200等AI芯片；上季度这类产品的对华销售额为24亿美元，四季度营收指引已不再包含中国数据中心产品。与此同时，特朗普表示美国只应向中国出售较旧型号AI芯片，即使完全不出售也无妨。",
+              "heading": "英伟达停售对华H200：上季对华相关销售额24亿美元说没就没",
+              "imageUrl": null,
+              "insight": null,
+              "links": [
+                {
+                  "label": "米中关系：英伟达中国向けH200含むAI半導体の出荷停止",
+                  "url": "https://www.alertchina.com/tag/%e7%b1%b3%e4%b8%ad%e9%96%a2%e4%bf%82/"
+                }
+              ],
+              "videos": []
+            },
+            {
+              "body": "继Lean社区为黎曼猜想证明“背书”后，质疑声也在跟进：数学家Baez正在拆解Masullo的940页广义黎曼手稿，指出第13章还是空的、444页存在硬伤；还有人算了一笔账，证明的Lean代码约1700万行，而整个Mathlib数学库才240万行，远超人类证明的惯例。",
+              "heading": "黎曼证明后续：940页手稿被逐章拆解，第13章还空着",
+              "imageUrl": null,
+              "insight": null,
+              "links": [
+                {
+                  "label": "The Context：AI前沿每日Briefing 2026-11-24",
+                  "url": "https://thecontext.dev/zh/topics/frontier-models/"
+                }
+              ],
+              "videos": []
+            }
+          ],
+          "key": "ai",
+          "title": "AI / 科技"
+        },
+        {
+          "items": [
+            {
+              "body": "上周五美股纳指跌5.28%，费城半导体指数狂泻10.73%，英伟达急跌14%，黄金全周跌近9%至3500美元关口，比特币跌至5.5万美元；过去一周纳指单周暴跌10%，MSCI环球指数全周跌8.1%，为疫情以来最惨一周，全球股市自8月高位以来市值蒸发近9万亿美元。导火索有两条：一是AI交易信心崩塌，Anthropic史上最大IPO后市场视为利好出尽，叠加英伟达人事动荡与SEC调查，集中质疑AI资本开支的回报；二是美联储12月加息预期急剧升温，甚至有官员提及50个基点的大幅加息，美联储主席沃什称正为“AI令市场失望、引发股市与经济同步下滑”做应急预案。",
+              "heading": "全球股金币三杀：纳指单周暴跌10%，抹去2026年全部涨幅",
+              "imageUrl": "https://images.ctfassets.net/hzjmpv1aaorq/5c8z3qCPdi0hCXjP4V00XX/9071e5cbba5e99831b92219d34bde240/representation-of-a-market-crash-with-traders-clos.jpg?fm=png&w=576&q=60",
+              "insight": "两个故事撞在了一起：AI烧钱还没赚到钱，钱却变贵了——这轮跌的不是某家公司，是“高估值加高利率”这个组合本身；对普通人，结论就一句：别在恐慌里追涨杀跌，行情已经从普涨进入“估值回归业绩验证”的分化期。",
+              "links": [
+                {
+                  "label": "界面新闻：亚太市场周一全线走弱，全球AI交易继续挤泡沫",
+                  "url": "https://www.jiemian.com/article/15362248.html"
+                },
+                {
+                  "label": "BusinessFocus：黑色星期五全球股金币三杀，港股步入熊市",
+                  "url": "https://businessfocus.io/article/366188/%E9%BB%91%E8%89%B2%E6%98%9F%E6%9C%9F%E4%BA%94-%E8%82%A1%E9%87%91%E5%B9%A3%E4%B8%89%E6%AE%BA-%E6%81%92%E6%8C%8722000%E9%BB%9E-%E6%B8%AF%E8%82%A1%E7%86%8A%E5%B8%82"
+                }
+              ],
+              "videos": [
+                {
+                  "title": "美股连跌7周未见底？林少阳警告2027年恐遭“估值＋盈利”双杀",
+                  "url": "https://www.youtube.com/watch?v=cxhzpa_VlcI"
+                }
+              ]
+            },
+            {
+              "body": "恒指上周累跌1226点，较年内高位蒸发逾两成，正式触及技术性熊市门槛；11月23日再跌1.89%收22410.8点，盘中一度跌破22000点，百度、阿里盘中均跌超4%。A股上证收3533.79点、跌1.23%，创年内新低；芯片、存储、科网领跌，网易业绩后重挫17.6%、快手跌11.4%。另一边，高盛把港股评级由“中性”上调至“增持”，预计MSCI中国明年有23%上升空间、2027年企业盈利增长15%，目前预测市盈率仅9.8倍；南向资金上周五逆势净买入118亿元。",
+              "heading": "港股跌入技术性熊市，高盛却逆市唱好：恒指一度跌破22000点",
+              "imageUrl": null,
+              "insight": "大行唱多和散户割肉同时发生——估值便宜是事实，但便宜可以更便宜；“捡便宜”之前先问一句：这家公司赚钱的能力变了吗？没变是错杀，变了就是价值回归。",
+              "links": [
+                {
+                  "label": "凯基：1123港股晨讯，恐慌性卖压未消",
+                  "url": "https://moneyschool.kgi.com.tw/stockcheck/stockbrief/ca51b168-8040-480e-af0e-aa48ebae44e3-advisory-2031"
+                }
+              ],
+              "videos": []
+            },
+            {
+              "body": "TrendForce最新研究指出，受中国云厂商大幅下修企业级SSD订单、消费电子需求疲弱及供给端产能扩张影响，预计2027年全球闪存供给位元年增25%至30%，合约价将于明年第一季转跌，之后逐季扩大跌幅。受此拖累，澜起科技跌9.1%、兆易创新跌8.6%、天数智芯跌12.4%。",
+              "heading": "存储行情反转预警：明年闪存供过于求，合约价一季度转跌",
+              "imageUrl": null,
+              "insight": null,
+              "links": [
+                {
+                  "label": "凯基：澜起、兆易受记忆体景气疑虑升温重挫",
+                  "url": "https://moneyschool.kgi.com.tw/stockcheck/stockbrief/ca51b168-8040-480e-af0e-aa48ebae44e3-advisory-2031"
+                }
+              ],
+              "videos": []
+            },
+            {
+              "body": "界面晚报11月23日提到，今年前10个月个税同比增长近23%，并追问这样的高增还能维持多久。个税是少数能直接反映居民收入变化的指标，这组数字值得继续盯。",
+              "heading": "前10个月个税同比增长近23%，高增还能维持多久",
+              "imageUrl": null,
+              "insight": null,
+              "links": [
+                {
+                  "label": "界面晚报：社会保险基金监督条例公开征求意见",
+                  "url": "https://www.jiemian.com/article/15361241.html"
+                }
+              ],
+              "videos": []
+            },
+            {
+              "body": "《社会保险基金监督条例》征求意见稿11月23日公开征求意见，聚焦基本养老、工伤、失业保险基金的支付、管理、投资运营，明确基金监督的职责、权限、措施，以及欺诈骗保等违法违规行为的法律责任。",
+              "heading": "社保基金监督条例公开征求意见：给“养老钱”“保命钱”单独立法",
+              "imageUrl": null,
+              "insight": null,
+              "links": [
+                {
+                  "label": "界面晚报：社会保险基金监督条例公开征求意见",
+                  "url": "https://www.jiemian.com/article/15361241.html"
+                }
+              ],
+              "videos": []
+            },
+            {
+              "body": "据港媒报道，阿里旗下芯片业务平头哥传明年赴港上市，集资约234亿元，估值高达4800亿元，市场关注其真武V900芯片的成色。目前仍是传闻阶段，未获官方确认。",
+              "heading": "阿里平头哥传明年赴港上市，集资约234亿、估值4800亿",
+              "imageUrl": null,
+              "insight": null,
+              "links": [
+                {
+                  "label": "BusinessFocus：阿里旗下平头哥传明年赴港上市",
+                  "url": "https://businessfocus.io/article/366188/%E9%BB%91%E8%89%B2%E6%98%9F%E6%9C%9F%E4%BA%94-%E8%82%A1%E9%87%91%E5%B9%A3%E4%B8%89%E6%AE%BA-%E6%81%92%E6%8C%8722000%E9%BB%9E-%E6%B8%AF%E8%82%A1%E7%86%8A%E5%B8%82"
+                }
+              ],
+              "videos": []
+            }
+          ],
+          "key": "finance",
+          "title": "财经 / 赚钱机会"
+        },
+        {
+          "items": [
+            {
+              "body": "11月19日，习近平在深圳会见来华出席APEC领导人非正式会议的特朗普，双方强调保持中美关系稳定发展势头，在农产品、能源、超级智能等领域加强合作，美方表示不支持“台独”。同日，中俄美三国元首在深圳举行首次三方会晤，围绕维护世界和平、促进大国关系战略稳定深入讨论，会后发表《中俄美元首和平宣言》，共识是“绝不能让核冲突发生”。特朗普称这是“多年来最具重大意义的国际峰会之一”，11月21日连发三十多张深圳相关照片。",
+              "heading": "深圳习川会：中美强调关系稳定，同日中俄美三方首晤发表和平宣言",
+              "imageUrl": "https://cbbcfocus.b-cdn.net/wp-content/uploads/2020/04/Shenzhen-night-scaled.jpg",
+              "insight": null,
+              "links": [
+                {
+                  "label": "红歌会网：美国把我整糊涂了，美国玩的是哪一出",
+                  "url": "https://m.szhgh.com/Article/opinion/zatan/2026-11-23/418066.html"
+                }
+              ],
+              "videos": []
+            },
+            {
+              "body": "美国贸易代表格里尔11月20日表示，明年1月10日到期的中美关税休战能否延长，取决于中国稀土供应是否能满足美国所需，目前中方核发出口许可的进度偏慢。双方正通过贸易委员会推动约300亿美元非敏感商品对等降税，美方已完成约半数措施；中方正履行每年采购2500万吨美国大豆的承诺，特朗普在会谈中要求进一步增加采购。",
+              "heading": "关税休战1月10日到期，延长与否看稀土给不给货",
+              "imageUrl": null,
+              "insight": null,
+              "links": [
+                {
+                  "label": "IEK产业情报网：中美关税休战延长得看稀土",
+                  "url": "https://ieknet.iek.org.tw/ieknews/news_more.aspx?actiontype=ieknews&indu_idno=0&nsl_id=fd182cba800b4ca7b8465c2abb2fb7d0"
+                }
+              ],
+              "videos": []
+            },
+            {
+              "body": "美国联邦通信委员会11月19日投票通过相关规则，拟禁止中国电信、中国联通、中国移动等“覆盖清单”企业直接获取美国互联网电话号码资源。中国商务部回应称，美方滥用监管权力、泛化国家安全，违背两国元首达成的重要共识，中方坚决反对，将采取必要措施维护自身利益。同一天深圳还在谈合作，华盛顿的脱钩动作也没停。",
+              "heading": "FCC出手：拟禁中国三大运营商直接获取美国电话号码资源",
+              "imageUrl": null,
+              "insight": null,
+              "links": [
+                {
+                  "label": "红歌会网：当面甜言蜜语，背后狠捅刀子吗",
+                  "url": "https://m.szhgh.com/Article/opinion/zatan/2026-11-23/418066.html"
+                }
+              ],
+              "videos": []
+            },
+            {
+              "body": "中美两军11月18日至20日在上海举行海上军事安全磋商实务会和年会，检视海空相遇时的安全行为规则，减少事故危险的措施达成一致，2027年实务会议题也已商定。美国财长贝森特11月20日透露，两国元首已一致同意，重大军事行动不得完全交由AI自主决策，必须保留人类参与。",
+              "heading": "中美军方上海谈防撞：海空相遇规则过一遍，军事AI须留人类在环内",
+              "imageUrl": null,
+              "insight": null,
+              "links": [
+                {
+                  "label": "中国风险情报：米中両軍、上海で海空の偶発事故防止を協議",
+                  "url": "https://www.alertchina.com/tag/%e7%b1%b3%e4%b8%ad%e9%96%a2%e4%bf%82/"
+                }
+              ],
+              "videos": []
+            },
+            {
+              "body": "中央纪委国家监委网站11月23日通报，科技部原重大专项司司长刘敏涉嫌严重违纪违法，目前正接受中央纪委国家监委驻科技部纪检监察组纪律审查和湖北省宜昌市监察委员会监察调查。",
+              "heading": "科技部原重大专项司司长刘敏接受纪律审查和监察调查",
+              "imageUrl": null,
+              "insight": null,
+              "links": [
+                {
+                  "label": "界面晚报：科技部原重大专项司司长刘敏接受纪律审查",
+                  "url": "https://www.jiemian.com/article/15361241.html"
+                }
+              ],
+              "videos": []
+            }
+          ],
+          "key": "hot",
+          "title": "时事热点"
+        },
+        {
+          "items": [
+            {
+              "body": "2027届保研主线：3-4月顶尖院校率先发布夏令营通知，5-6月集中报名，7-8月参营考核，8月下旬到9月中旬预推免补录，9月18日起推免系统注册、9月21日9点开始填报志愿，10月18日截止。结构性变化值得注意：部分头部院系压缩学硕、转向直博和专硕，北大法学院2027年推免只留专硕和直博，复旦数学、上交数学自2027年起不招学硕；清华27届推免系统7月1日开放，比往年提前两个月；多所高校加分总额受限，同类成果不再无限累计，转向“代表作评价”。",
+              "heading": "2027届保研时间线出炉：夏令营3月启动，推免系统9月21日填报",
+              "imageUrl": "https://chinaedueasy.com/_next/image?url=%2Fimages%2Fchinaedueasy%2FUniversities%2FUniversities-education-forum-delegates.webp&w=640&q=75",
+              "insight": "对大三的你，窗口正在前移：夏令营的选拔功能在弱化、预推免提前，清华7月就开系统——绩点和科研的“响应周期”要按月算，12月六级是夏令营前最后一次可用成绩，别拖到明年6月。",
+              "links": [
+                {
+                  "label": "辰图：保研什么时候开始准备",
+                  "url": "https://chento.cn/articles/baoyan-when-to-start"
+                },
+                {
+                  "label": "会计网：2027届保研时间线从什么时候开始",
+                  "url": "https://www.kuaiji.com/baoyan/8291191823.html"
+                }
+              ],
+              "videos": []
+            },
+            {
+              "body": "宁波奥拉半导体2026秋招：数字设计、混合信号模拟设计、电源模拟设计、CAD工程师，工作地上海、深圳，截止2027年1月2日。纳芯微电子2026秋招：模拟IC设计、应用工程、测试开发等方向，大本营在苏州，截止2027年1月14日。两家都提醒：芯片研发核心岗硕士几乎是起步价，本科生更多流向应用支持、测试、销售技术支持；简历要写具体做过什么电路、用过什么EDA工具、解决过什么时序问题。",
+              "heading": "半导体秋招还在招：奥拉、纳芯微，核心研发岗硕士几乎是起步价",
+              "imageUrl": null,
+              "insight": null,
+              "links": [
+                {
+                  "label": "UP求职：宁波奥拉半导体2026秋招解读",
+                  "url": "https://www.upjianli.com/jianlixiezuo/10553.html"
+                },
+                {
+                  "label": "UP求职：纳芯微电子2026秋招值得投吗",
+                  "url": "https://www.upcv.tech/jianlixiezuo/10921.html"
+                }
+              ],
+              "videos": []
+            },
+            {
+              "body": "宁波市数据局所属事业单位校园招聘集成电路科学与工程岗，本科起，工作地宁波，有笔试，秋招批次，截止日期就是今天2026年11月24日。想投的抓紧核对官方原文再投。",
+              "heading": "宁波市数据局事业单位集成电路岗，今天截止",
+              "imageUrl": null,
+              "insight": null,
+              "links": [
+                {
+                  "label": "校招宝：宁波市数据局所属事业单位校园招聘",
+                  "url": "https://xiaozhaobao.com.cn/job/37551433"
+                }
+              ],
+              "videos": []
+            },
+            {
+              "body": "11月23日“金饰克价涨至1091元”登上微博热搜第4。有意思的是，国际金价上周刚大跌近9%至3500美元关口，国内金饰价却纹丝不动甚至还在涨——品牌溢价和加工费让饰品金价跌得比国际金价慢得多，买金饰和买金条完全是两笔账。",
+              "heading": "金饰克价涨至1091元，登上微博热搜第4",
+              "imageUrl": null,
+              "insight": null,
+              "links": [
+                {
+                  "label": "今日热榜：11月23日全网热搜回顾",
+                  "url": "https://hot.xhja.cn/today/2026-11-23"
+                }
+              ],
+              "videos": []
+            },
+            {
+              "body": "据界面晚报11月23日消息，一种新型血检可更准确评估阿尔茨海默病晚期病理进展。家里有老人的可以留意这类筛查技术的进展，早发现仍是最有用的干预。",
+              "heading": "健康一句话：新型血检能更准确评估阿尔茨海默病晚期病理进展",
+              "imageUrl": null,
+              "insight": null,
+              "links": [
+                {
+                  "label": "界面晚报：新型血检可更准确评估阿尔茨海默病晚期病理进展",
+                  "url": "https://www.jiemian.com/article/15361241.html"
+                }
+              ],
+              "videos": []
+            }
+          ],
+          "key": "life",
+          "title": "生活情报"
+        },
+        {
+          "items": [
+            {
+              "body": "据H3X统计，过去24小时闲鱼搜索前十：PS5、iPhone、Xbox Series X、iPhone 11、PlayStation 5、PS5 Pro、耐克、Switch、RX 7600、Xbox Series S；本周榜单里iPhone、PS5、MacBook稳居前三，显卡也连续多日上榜。",
+              "heading": "游戏机霸榜：过去24小时热搜前十，游戏机占了一半",
+              "imageUrl": "https://static.hub.91mobiles.com/multisite/wp-content/uploads/sites/4/2022/08/second-hand-smartphone-sell-2-696x392.jpg",
+              "insight": "年底换机加送礼季，游戏机成了闲鱼上的硬通货——流通性越好的东西越保值，买二手先看它好不好出，比看它便宜多少更重要。",
+              "links": [
+                {
+                  "label": "H3X：闲鱼24小时热搜榜",
+                  "url": "https://h3xsearch.com/en/trending/"
+                }
+              ],
+              "videos": []
+            },
+            {
+              "body": "新机发布后，闲鱼上历代苹果旗舰搜索量暴涨200%以上，iPhone 17 Pro Max搜索量增长近4倍，超5.4万人在搜；在售的iPhone 16 Pro Max 256GB成交均价约5210元，15 Pro Max 256GB约4087元，多数老款发布会后小幅下调1%-3%。",
+              "heading": "iPhone换机潮：17 Pro Max搜索量涨近4倍，老款次代机是捡漏窗口",
+              "imageUrl": null,
+              "insight": "新机发布就是旧旗舰的出货窗口，等等党专挑这时候捡次代机——但要盯成交均价，别被个别低价引流帖带偏。",
+              "links": [
+                {
+                  "label": "H3X：闲鱼24小时热搜榜",
+                  "url": "https://h3xsearch.com/en/trending/"
+                }
+              ],
+              "videos": []
+            },
+            {
+              "body": "11月19日实测：闲鱼上“贝宝”词下卖的其实是PayPal账号申诉、解封、过审指导（48.88-500元）与支付通道对接；Wise代充7天仅7条、没有一条是真代充，咨询指南标价已上移到193-408元；虚拟信用卡7天约1260条，港卡开户约60条。网站搭建、小程序开发、视频剪辑等主流服务词7天新发普遍超过1500条。",
+              "heading": "服务市场暗流：PayPal供给藏在“贝宝”词下，真Wise代充一条也没有",
+              "imageUrl": null,
+              "insight": "平台屏蔽词催生了谐音词黑话——搜不到不等于没需求，是供给换了马甲；跨境支付服务仍是闲鱼服务市场的暗流，标价多为引流价，真实成交价要私聊谈。",
+              "links": [
+                {
+                  "label": "闲鱼服务市场研究 2026-11-19",
+                  "url": "https://yunzhi.dev/post/pi1gfoegitm43"
+                },
+                {
+                  "label": "闲鱼商品：PayPal套装出，100元",
+                  "url": "https://www.goofish.com/item?id=1101202769340&categoryId=201452008"
+                },
+                {
+                  "label": "闲鱼商品：外贸独立站建设，PayPal支付通道对接，90元",
+                  "url": "https://www.goofish.com/item?id=1101196185256&categoryId=202035102"
+                }
+              ],
+              "videos": []
+            },
+            {
+              "body": "据闲鱼竞拍热门商品分析，手机数码、服饰箱包、潮玩是交易最活跃的三大品类，其中BJD娃娃、手办、盲盒收藏属性强、社区驱动购买，价格波动主要看圈子热度。",
+              "heading": "潮玩仍是热门品类：手办盲盒靠社区驱动，价格看圈子热度不看成本",
+              "imageUrl": null,
+              "insight": "潮玩的定价逻辑和数码完全不同：数码看配置折旧，潮玩看圈子情绪——追高之前先问自己，是不是接盘的那个。",
+              "links": [
+                {
+                  "label": "Accio：某鱼竞拍热门商品有哪些",
+                  "url": "https://zh.accio.com/business/%E6%9F%90%E9%B1%BC%E7%AB%9E%E6%8B%8D%E7%83%AD%E9%97%A8%E5%95%86%E5%93%81"
+                }
+              ],
+              "videos": []
+            }
+          ],
+          "key": "xianyu",
+          "title": "闲鱼风向标"
+        },
+        {
+          "items": [
+            {
+              "body": "孙宇晨在金明《黄金时代》的3.5小时访谈里摊牌：对BTC偏空，担心AI和量子计算对比特币密码学构成实质威胁，市场严重低估，而去中心化机制下全网抗量子升级几乎无法达成共识；但他自己的BTC底仓一股没动，只是转进没签过名的新冷钱包做隔离。ETH在去年3600-4000美元区间减了八九成、只剩2成仓观望；纳指中线微微看空；AI板块最看好应用层，尤其AI健康管理，最不看好存储、光模块。",
+              "heading": "孙宇晨3.5小时深度访谈：看空BTC，ETH减了八九成，最看好AI应用",
+              "imageUrl": "https://media.smallbiztrends.com/2023/01/getting-interviewed-on-popular-podcasts.png",
+              "insight": "他真正的判断不是“看空”两个字，而是“判断和仓位分开”：嘴上看空、底仓没动，减的是涨到顶的ETH不是信仰——听大佬要听他怎么调仓，不听他喊什么方向；以及他去年喊“永远缺存储”后闪迪从35美元涨到1400多，这次反手不看好存储，周期判断比方向判断更值得记。",
+              "links": [
+                {
+                  "label": "OKX Orbit：孙宇晨最新深度访谈核心观点",
+                  "url": "https://tr.okx.com/orbit/insight/90438526095840"
+                },
+                {
+                  "label": "PANews：对话孙宇晨，AI黄金时代普通人如何下注",
+                  "url": "https://panews.io/articles/01a151fc-2299-710a-973f-00d8e630f888"
+                }
+              ],
+              "videos": []
+            },
+            {
+              "body": "《杨澜访谈录2026》11月25日起登陆爱奇艺，每周三12点播出，六期六位嘉宾：郭帆、北大教授程乐松、绘本画家蔡皋、王力宏、王传君、陈冲。这一季不追问高光时刻，而是与嘉宾一起回溯来路，“带着共同的时间去相遇”，重逢“还没有被世界定义的自己”。",
+              "heading": "《杨澜访谈录2026》明起开播：郭帆、王力宏、陈冲，不聊高光聊来路",
+              "imageUrl": null,
+              "insight": "访谈节目也在换打法：成功学叙事退潮，“时间感”和“没赢之前是什么样的人”成了新卖点——观众想看的不是赢家怎么赢，而是赢家在没赢之前是什么样的人。",
+              "links": [
+                {
+                  "label": "中国经济新闻网：《杨澜访谈录2026》11月25日起爱奇艺开播",
+                  "url": "https://new.cet.com.cn/cms/content/show/id/10676637.html"
+                }
+              ],
+              "videos": []
+            },
+            {
+              "body": "东腔西调Vol.294（11月23日），主播施展用罗马史读美国：自耕农支撑起共和国，马略改革让军队变成将军的私兵，凯撒发动失地平民颠覆元老院；对照美国的西进运动、民权运动、制造业外包与铁锈地带、MAGA运动的土壤，以及AI时代年轻人买不起房的代际撕裂。",
+              "heading": "施展×东腔西调：用罗马史读懂美国中期选举",
+              "imageUrl": null,
+              "insight": "历史对照的价值不在“美国就是罗马”，而在看到制度变迁的通用剧本：当一代人失去上升通道，旧的共识机制就会先失灵、再被重写——理解这点，再看任何国家的选举新闻都有了坐标系。",
+              "links": [
+                {
+                  "label": "东腔西调 Vol.294：当凯撒遇见MAGA",
+                  "url": "https://radios-hk.com/podcasts/dong-qiang-xi-diao-1533768416"
+                }
+              ],
+              "videos": []
+            }
+          ],
+          "key": "figures",
+          "title": "名人事件"
+        }
+      ]
     }
   }
 }
